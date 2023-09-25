@@ -15,14 +15,15 @@ def __gerar_caminho_output(nome_arquivo, extensao='png'):
 
 
 def __gerar_lista_anos(qtd_projecoes):
-    return np.arange(0, qtd_projecoes, step=1)
+    return []
+    # return np.arange(1, qtd_projecoes+1, step=1)
 
 
 
 def plotar_linhas(simulacoes,qtd_projecoes, titulo):
 
     for ano in range(qtd_projecoes):
-        plt.plot(simulacoes[ano], label=f'ano: {ano + 1}')
+        plt.plot(simulacoes[ano])
 
     plt.xlabel('Valores Simulados')
     plt.ylabel(titulo)

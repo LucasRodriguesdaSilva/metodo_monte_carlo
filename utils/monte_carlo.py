@@ -26,7 +26,7 @@ def projetar_dados(pesos, serie_historica, n_simulacoes, qtd_projecoes):
             Quantidade de projeções no futuro
         :return: list
             Retorna uma lista, contendo os valores projetado e os valores simulados
-        """
+    """
 
     media = np.mean(serie_historica)
     desvio_padrao = np.std(serie_historica)
@@ -51,3 +51,5 @@ def projetar_dados(pesos, serie_historica, n_simulacoes, qtd_projecoes):
     valores_projetados = escolha_aleatoria(qtd_projecoes=qtd_projecoes,valores_simulados=resultados_simulados)
 
     return valores_projetados, resultados_simulados
+
+
