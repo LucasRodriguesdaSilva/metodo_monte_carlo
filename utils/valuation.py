@@ -10,8 +10,19 @@ class Valuation:
                                                        qtd_projecoes=self.qtd_projecoes,
                                                        serie_historica=serie_historica)
 
-        ut.plotar_linhas(simulacoes=simulacao, qtd_projecoes=self.qtd_projecoes, titulo='IPCA')
+        ut.plotar_linhas(simulacoes=simulacao, qtd_projecoes=self.qtd_projecoes, titulo='Var. do IPCA')
         return valores_projetados
+
+
+    def projetar_pib(self, pesos):
+        serie_historica = sh.pegar_serie_pib()
+        valores_projetados, simulacao = monte_carlo.projetar_dados(pesos=pesos, n_simulacoes=self.n_simulacoes,
+                                                       qtd_projecoes=self.qtd_projecoes,
+                                                       serie_historica=serie_historica)
+
+        ut.plotar_linhas(simulacoes=simulacao, qtd_projecoes=self.qtd_projecoes, titulo='Var. do PIB')
+        return valores_projetados
+
 
     def __init__(self, qtd_projecoes, n_simulacoes):
         self.qtd_projecoes = qtd_projecoes
