@@ -2,6 +2,7 @@ from bcb import sgs
 from time import  sleep
 import ipeadatapy
 import numpy as np
+from utils import utils as ut
 
 def __get_code_pib():
     return 'PAN4_PIBPMG4'
@@ -25,7 +26,7 @@ def sgs_get(codigo):
     return serie
 
 
-def pegar_premio_risco():
+def pegar_selic():
 
     premio_risco = sgs_get(11) # SELIC
     premio_risco = premio_risco.values.tolist()
@@ -38,6 +39,9 @@ def pegar_premio_risco():
 def pegar_serie_ipca():
     code = __get_code_ipca()
     serie_ipca = ipeadatapy.timeseries(code)[f'VALUE ((% a.m.))']
+
+    ut.plotar_serie_historia(serie=serie_ipca,titulo='IPCA')
+
     serie_ipca = serie_ipca.values
     serie_ipca = serie_ipca / 100
     
@@ -47,6 +51,9 @@ def pegar_serie_ipca():
 def pegar_serie_pib():
     code = __get_code_pib()
     pib_var_trim = ipeadatapy.timeseries(code)[f'VALUE ((% a.a.))']
+
+    ut.plotar_serie_historia(serie=pib_var_trim,titulo='PIB Brasileiro')
+
     pib_var_trim = pib_var_trim.values
     pib_var_trim = pib_var_trim / 100
 
