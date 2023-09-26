@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import os
-
+import datetime
 import numpy as np
 
 
@@ -15,23 +15,42 @@ def __gerar_caminho_output(nome_arquivo, extensao='png'):
 
 
 def __gerar_lista_anos(qtd_projecoes):
-    return []
-    # return np.arange(1, qtd_projecoes+1, step=1)
+
+    ano_atual = datetime.datetime.now().year
+
+    ano_atual += 1
+    anos_futuros = [ano_atual + i for i in range(qtd_projecoes)]
+    return anos_futuros
 
 
 
 def plotar_linhas(simulacoes,qtd_projecoes, titulo):
 
+    # AUMENTAR TAMANHO DA IMAGEM
     for ano in range(qtd_projecoes):
         plt.plot(simulacoes[ano])
 
-    plt.xlabel('Valores Simulados')
+    plt.xlabel('Valores Simulados (%)')
     plt.ylabel(titulo)
     plt.title(f'Distribuição dos Valores Simulados - {titulo}')
-    plt.legend()
+    # plt.legend()
     plt.grid(True)
-    saida = __gerar_caminho_output(f'histograma_{titulo}')
-    plt.xticks(__gerar_lista_anos(qtd_projecoes=qtd_projecoes))
+    saida = __gerar_caminho_output(f'grafico_{titulo}')
+    anos_futuros = __gerar_lista_anos(qtd_projecoes=qtd_projecoes)
+    plt.xticks(range(qtd_projecoes), anos_futuros)
+    plt.savefig(saida)
+    plt.close()
+
+
+
+def plotar_serie_historia(serie, titulo):
+    # Plota o gráfico de linha com os dados
+    plt.plot(serie)
+    plt.title(f'Distribuição da série histórica - {titulo}')
+    plt.xlabel("Anos")
+    plt.ylabel("Taxa (%)")
+    plt.grid(True)
+    saida = __gerar_caminho_output(f'grafico_serie_historica_{titulo}')
     plt.savefig(saida)
     plt.close()
 
@@ -64,7 +83,7 @@ def plotar_hist(simulacoes, qtd_projecoes, titulo:
 """
 
 
-def distribuir_valor(valor, peso=0.0025, tam_array=10):
+def distribuir_valor(valor, peso, tam_array):
     """
         Gera um array onde o valor calculado fica no meio
         e para esquerda há um diminuição do peso e para 
@@ -90,3 +109,9 @@ def distribuir_valor(valor, peso=0.0025, tam_array=10):
         array[i] = array[i-1] + peso
 
     return array
+
+def is_lista(valor):
+    if isinstance(valor, list):
+        raise TypeError('O valor é uma lista')
+    else:
+        pass
