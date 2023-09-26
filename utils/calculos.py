@@ -25,3 +25,16 @@ def calculoBeta(ativo, bench="^BVSP",dias_passados = 3652.5):
     # beta = np.full(11,calculo_beta.params[1])
 
     return calculo_beta.params[1]
+
+def calculo_growth(inflacao, pib):
+    """
+        Calcular o Growth utilizando a inflação e o pib
+        
+        :param inflacao: int
+        :param pib: int
+        :return: int
+    """
+    return ((1 + inflacao) * (1 + pib)) - 1
+
+
+
