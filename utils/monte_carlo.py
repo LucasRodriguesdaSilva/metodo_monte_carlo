@@ -11,7 +11,7 @@ def escolha_aleatoria(qtd_projecoes, valores_simulados):
     return projecoes_anuais
 
 
-def projetar_dados(pesos, serie_historica, n_simulacoes, qtd_projecoes):
+def projetar_dados(pesos, serie_historica, n_simulacoes, qtd_projecoes, is_premio_risco = False):
     """
         Projeta a simulação para uma serie historica e retorna o valores
         simulados com uma distribuição normal e valores escolhidos aleatoriamente
@@ -43,7 +43,11 @@ def projetar_dados(pesos, serie_historica, n_simulacoes, qtd_projecoes):
 
         for ano_projetado in range(qtd_projecoes):
             distribuicao_normal_ponderada = np.random.normal(media, desvio_padrao) * pesos[ano_projetado]
-            valor_atual = valor_atual * (1 + distribuicao_normal_ponderada)
+            if is_premio_risco:
+                valor_atual = distribuicao_normal_ponderada - valor_atual # Uma forma de projetar o premio de risco
+            else:
+                valor_atual = valor_atual * (1 + distribuicao_normal_ponderada)
+
             simulacao_atual.append(valor_atual)
 
         resultados_simulados.append(np.array(simulacao_atual))

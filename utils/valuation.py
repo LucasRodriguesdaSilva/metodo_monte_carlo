@@ -23,6 +23,20 @@ class Valuation:
         ut.plotar_linhas(simulacoes=simulacao, qtd_projecoes=self.qtd_projecoes, titulo='Var. do PIB')
         return valores_projetados
 
+    def projetar_premio_risco(self, pesos):
+        serie_historica = sh.pegar_premio_risco()
+        valores_projetados, simulacao = monte_carlo.projetar_dados(pesos=pesos, n_simulacoes=self.n_simulacoes,
+                                                       qtd_projecoes=self.qtd_projecoes,
+                                                       serie_historica=serie_historica)
+
+        ut.plotar_linhas(
+            simulacoes=simulacao, 
+            qtd_projecoes=self.qtd_projecoes, 
+            titulo='Var. do Premio de Risco'
+        )
+        
+        return valores_projetados
+
 
     def __init__(self, qtd_projecoes, n_simulacoes):
         self.qtd_projecoes = qtd_projecoes

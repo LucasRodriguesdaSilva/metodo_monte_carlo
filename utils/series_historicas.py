@@ -25,6 +25,15 @@ def sgs_get(codigo):
     return serie
 
 
+def pegar_premio_risco():
+
+    premio_risco = sgs_get(11) # SELIC
+    premio_risco = premio_risco.values.tolist()
+    premio_risco = porcentagem(serie=premio_risco)
+
+    return premio_risco
+
+
 
 def pegar_serie_ipca():
     code = __get_code_ipca()
