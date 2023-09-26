@@ -63,3 +63,30 @@ def plotar_hist(simulacoes, qtd_projecoes, titulo:
     plt.close()
 """
 
+
+def distribuir_valor(valor, peso=0.0025, tam_array=10):
+    """
+        Gera um array onde o valor calculado fica no meio
+        e para esquerda há um diminuição do peso e para 
+        a direita a uma soma do peso
+
+        :param valor: int
+            Valor principal
+        :param peso: int
+            Um peso para distribuir o valor
+        :param tam_array: int
+            Tamanho do array final
+        :return: list
+    """
+
+    array = [0] * tam_array
+    meio = tam_array // 2
+    array[meio] = valor
+
+    for i in range(meio-1, -1, -1):
+        array[i] = array[i+1] - peso
+
+    for i in range(meio+1, tam_array):
+        array[i] = array[i-1] + peso
+
+    return array
