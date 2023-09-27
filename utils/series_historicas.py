@@ -10,6 +10,12 @@ def __get_code_pib():
 def __get_code_ipca():
     return 'PRECOS12_IPCAG12'
 
+def __get_code_di():
+    return 'BMF12_SWAPDI36012' # Taxa referencial - swaps - DI x pré-fixada - 360 dias - média do período
+
+def __Get_code_cds():
+    return 'JPM366_EMBI366'
+
 def porcentagem(serie):
     serie = [[valor / 100 for valor in lista] for lista in serie]
     return serie
@@ -26,13 +32,16 @@ def sgs_get(codigo):
     return serie
 
 
-def pegar_selic():
+def pegar_serie_selic():
 
-    premio_risco = sgs_get(11) # SELIC
-    premio_risco = premio_risco.values.tolist()
-    premio_risco = porcentagem(serie=premio_risco)
+    selic = sgs_get(11) # SELIC
 
-    return premio_risco
+    ut.plotar_serie_historia(serie=selic,titulo='SELIC')
+
+    selic = selic.values.tolist()
+    selic = porcentagem(serie=selic)
+
+    return selic
 
 
 
@@ -60,6 +69,25 @@ def pegar_serie_pib():
     return pib_var_trim
 
 
+def pegar_serie_di():
+    code = __get_code_di()
+    serie_di = ipeadatapy.timeseries(code)[f'VALUE ((% a.a.))']
+
+    ut.plotar_serie_historia(serie=serie_di,titulo='DI x pré-fixada')
+
+    serie_di = serie_di.values
+    serie_di = serie_di / 100
+
+    return serie_di
 
 
-pegar_serie_pib()
+def pegar_serie_cds():
+    code = __Get_code_cds()
+    serie_cds = ipeadatapy.timeseries(code)['VALUE (-)']
+    serie_cds = serie_cds.pct_change().dropna().resample('Y').mean().to_frame()
+
+    ut.plotar_serie_historia(serie=serie_cds,titulo='Var. CDS Anual')
+
+    serie_cds = serie_cds.values
+
+    return serie_cds
