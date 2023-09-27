@@ -5,11 +5,16 @@ from utils import series_historicas as sh
 
 class Valuation:
 
-    def projetar_ipca(self, pesos):
-        serie_historica = sh.pegar_serie_ipca()
+    def projetar(self,pesos, serie_historica, is_premio_risco = False):
         valores_projetados, simulacao = monte_carlo.projetar_dados(pesos=pesos, n_simulacoes=self.n_simulacoes,
                                                        qtd_projecoes=self.qtd_projecoes,
-                                                       serie_historica=serie_historica)
+                                                       serie_historica=serie_historica, is_premio_risco=is_premio_risco)
+        return valores_projetados, simulacao
+
+
+    def projetar_ipca(self, pesos):
+        serie_historica = sh.pegar_serie_ipca()
+        valores_projetados, simulacao = self.projetar(pesos=pesos, serie_historica=serie_historica)
 
         ut.plotar_linhas(simulacoes=simulacao, qtd_projecoes=self.qtd_projecoes, titulo='Var. do IPCA')
         return valores_projetados
@@ -17,9 +22,7 @@ class Valuation:
 
     def projetar_pib(self, pesos):
         serie_historica = sh.pegar_serie_pib()
-        valores_projetados, simulacao = monte_carlo.projetar_dados(pesos=pesos, n_simulacoes=self.n_simulacoes,
-                                                       qtd_projecoes=self.qtd_projecoes,
-                                                       serie_historica=serie_historica)
+        valores_projetados, simulacao = self.projetar(pesos=pesos, serie_historica=serie_historica)
 
         ut.plotar_linhas(simulacoes=simulacao, qtd_projecoes=self.qtd_projecoes, titulo='Var. do PIB Brasileiro')
         return valores_projetados
@@ -60,10 +63,8 @@ class Valuation:
 
 
     def projetar_premio_risco(self, pesos):
-        serie_historica = sh.pegar_premio_risco()
-        valores_projetados, simulacao = monte_carlo.projetar_dados(pesos=pesos, n_simulacoes=self.n_simulacoes,
-                                                       qtd_projecoes=self.qtd_projecoes,
-                                                       serie_historica=serie_historica)
+        serie_historica = sh.pegar_serie_selic()
+        valores_projetados, simulacao = self.projetar(pesos=pesos, serie_historica=serie_historica, is_premio_risco=True)
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
@@ -72,6 +73,20 @@ class Valuation:
         )
         
         return valores_projetados
+
+    def projetar_cds(self,pesos):
+        serie_historica = sh.pegar_serie_cds()
+        valores_projetados, simulacao = self.projetar(pesos=pesos, serie_historica=serie_historica)
+
+        ut.plotar_linhas(
+            simulacoes=simulacao, 
+            qtd_projecoes=self.qtd_projecoes, 
+            titulo='Var. do Premio de Risco'
+        )
+        
+        return valores_projetados
+
+    
 
 
     def __init__(self, qtd_projecoes, n_simulacoes):
