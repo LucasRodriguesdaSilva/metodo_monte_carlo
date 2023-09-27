@@ -24,6 +24,8 @@ def projetar_dados(pesos, serie_historica, n_simulacoes, qtd_projecoes, is_premi
         :param n_simulacoes: int
         :param qtd_projecoes: int
             Quantidade de projeções no futuro
+        :param is_premio_risco: boolean
+            Flag para calcular com base na selic
         :return: list
             Retorna uma lista, contendo os valores projetado e os valores simulados
     """
