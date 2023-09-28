@@ -3,6 +3,7 @@ from time import  sleep
 import ipeadatapy
 import numpy as np
 from utils import utils as ut
+from utils import calculos
 
 def __get_code_pib():
     return 'PAN4_PIBPMG4'
@@ -87,7 +88,26 @@ def pegar_serie_cds():
     serie_cds = serie_cds.pct_change().dropna().resample('Y').mean().to_frame()
 
     ut.plotar_serie_historia(serie=serie_cds,titulo='Var. CDS Anual')
-
     serie_cds = serie_cds.values
+    
+    novo_array = []
+    for cds in serie_cds:
+        novo_array.append(cds[0])
 
-    return serie_cds
+
+    return novo_array
+
+# Alterar depois 
+# Calculo do PL / LPA retirado do site da statuinvesti 
+def pegar_serie_cje():
+    """
+        Calculo do PL / LPA 
+    """
+    cje = calculos.calculo_pl_lpa_json()
+
+    ut.plotar_serie_historia(serie=cje,titulo='var. da Cobertura de Juros da Empresa')
+
+    cje = cje.values
+    cje = cje / 100
+
+    return cje

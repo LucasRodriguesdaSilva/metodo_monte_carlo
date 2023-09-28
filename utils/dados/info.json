@@ -1,0 +1,664 @@
+{
+    "Setor": "Consumo Cíclico",
+    "SubSetor": "Tecidos. Vestuário e Calçados",
+    "Segmento": "Calçados",
+    "Valor atual": 6.48,
+    "Min. 52 semanas": 4.96,
+    "Máx. 52 semanas": 7.68,
+    "Valorização (12m)": 0.1192,
+    "Tipo": "ON",
+    "Patrimônio líquido": 3373909000,
+    "Ativos": 3707916000,
+    "Ativo circulante": 2263737000,
+    "Divida bruta": 89361000,
+    "Disponibilidade": 752337000,
+    "Divida liquida": -662976000,
+    "Valor de mercado": 5845996800,
+    "Valor de firma": 5183020800,
+    "Segmento de listagem": "Novo Mercado",
+    "Investidores": [
+        {
+            "Acionista": "Alexandre Grendene Bartelle",
+            "PessoaFisica": "true",
+            "Nacionalidade": "Brasileiro",
+            "DataUltimaAlteracao": "30/11/2022",
+            "PercentualOrdinarias": 41.2,
+            "PercentualPreferencial": 0,
+            "PercentualTotal": 41.2,
+            "AcionistaControlador": true,
+            "AcordoAcionistas": true,
+            "QuantidadeOrdinarias": 371651807,
+            "QuantidadePreferencial": 0,
+            "QuantidadeTotal": 371651807
+        },
+        {
+            "Acionista": "Pedro Grendene Bartelle",
+            "PessoaFisica": "true",
+            "Nacionalidade": "Brasileiro",
+            "DataUltimaAlteracao": "30/11/2022",
+            "PercentualOrdinarias": 13.89,
+            "PercentualPreferencial": 0,
+            "PercentualTotal": 13.89,
+            "AcionistaControlador": true,
+            "AcordoAcionistas": true,
+            "QuantidadeOrdinarias": 125312376,
+            "QuantidadePreferencial": 0,
+            "QuantidadeTotal": 125312376
+        },
+        {
+            "Acionista": "3G Radar Gestora de Recursos Ltda",
+            "CpfCnpj": "17.776.271/0001-36",
+            "PessoaFisica": "false",
+            "Nacionalidade": "Brasileira",
+            "DataUltimaAlteracao": "04/11/2021",
+            "PercentualOrdinarias": 8.03,
+            "PercentualPreferencial": 0,
+            "PercentualTotal": 8.03,
+            "AcionistaControlador": false,
+            "AcordoAcionistas": false,
+            "QuantidadeOrdinarias": 72443300,
+            "QuantidadePreferencial": 0,
+            "QuantidadeTotal": 72443300
+        },
+        {
+            "Acionista": "Giovana Bartelle Velloso",
+            "PessoaFisica": "true",
+            "Nacionalidade": "Brasileira",
+            "DataUltimaAlteracao": "30/11/2022",
+            "PercentualOrdinarias": 4.12,
+            "PercentualPreferencial": 0,
+            "PercentualTotal": 4.12,
+            "AcionistaControlador": true,
+            "AcordoAcionistas": true,
+            "QuantidadeOrdinarias": 37132797,
+            "QuantidadePreferencial": 0,
+            "QuantidadeTotal": 37132797
+        },
+        {
+            "Acionista": "Pedro Bartelle",
+            "PessoaFisica": "true",
+            "Nacionalidade": "Brasileiro",
+            "DataUltimaAlteracao": "31/10/2022",
+            "PercentualOrdinarias": 3.83,
+            "PercentualPreferencial": 0,
+            "PercentualTotal": 3.83,
+            "AcionistaControlador": true,
+            "AcordoAcionistas": true,
+            "QuantidadeOrdinarias": 34557397,
+            "QuantidadePreferencial": 0,
+            "QuantidadeTotal": 34557397
+        },
+        {
+            "Acionista": "André de Camargo Bartelle",
+            "PessoaFisica": "true",
+            "Nacionalidade": "Brasileira",
+            "DataUltimaAlteracao": "30/11/2022",
+            "PercentualOrdinarias": 3.24,
+            "PercentualPreferencial": 0,
+            "PercentualTotal": 3.24,
+            "AcionistaControlador": true,
+            "AcordoAcionistas": true,
+            "QuantidadeOrdinarias": 29201277,
+            "QuantidadePreferencial": 0,
+            "QuantidadeTotal": 29201277
+        },
+        {
+            "Acionista": "Gabriella de Camargo Bartelle",
+            "PessoaFisica": "true",
+            "Nacionalidade": "Brasileira",
+            "DataUltimaAlteracao": "30/11/2022",
+            "PercentualOrdinarias": 3.2,
+            "PercentualPreferencial": 0,
+            "PercentualTotal": 3.2,
+            "AcionistaControlador": true,
+            "AcordoAcionistas": true,
+            "QuantidadeOrdinarias": 28912677,
+            "QuantidadePreferencial": 0,
+            "QuantidadeTotal": 28912677
+        },
+        {
+            "Acionista": "Ações Tesouraria",
+            "PessoaFisica": "false",
+            "PercentualOrdinarias": 0.05,
+            "PercentualPreferencial": 0,
+            "PercentualTotal": 0.05,
+            "AcionistaControlador": false,
+            "AcordoAcionistas": false,
+            "QuantidadeOrdinarias": 467650,
+            "QuantidadePreferencial": 0,
+            "QuantidadeTotal": 467650
+        },
+        {
+            "Acionista": "Outros",
+            "PessoaFisica": "false",
+            "PercentualOrdinarias": 22.44,
+            "PercentualPreferencial": 0,
+            "PercentualTotal": 22.44,
+            "AcionistaControlador": false,
+            "AcordoAcionistas": false,
+            "QuantidadeOrdinarias": 202480719,
+            "QuantidadePreferencial": 0,
+            "QuantidadeTotal": 202480719
+        }
+    ],
+    "Proventos": [
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.018995091,
+            "ValorEventoDesdobramentoAgrupamento": 0.018995091,
+            "DataCom": "2023-08-21",
+            "DataPagamento": "2023-09-06"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.075509523,
+            "ValorEventoDesdobramentoAgrupamento": 0.075509523,
+            "DataCom": "2023-05-22",
+            "DataPagamento": "2023-06-07"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.121929952,
+            "ValorEventoDesdobramentoAgrupamento": 0.121929952,
+            "DataCom": "2023-05-02",
+            "DataPagamento": "2023-05-17"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 1.113144005,
+            "ValorEventoDesdobramentoAgrupamento": 1.113144005,
+            "DataCom": "2023-05-02",
+            "DataPagamento": "2023-05-17"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.065507678,
+            "ValorEventoDesdobramentoAgrupamento": 0.065507678,
+            "DataCom": "2022-11-03",
+            "DataPagamento": "2022-11-23"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.037706874,
+            "ValorEventoDesdobramentoAgrupamento": 0.037706874,
+            "DataCom": "2022-11-03",
+            "DataPagamento": "2022-11-23"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.019962463,
+            "ValorEventoDesdobramentoAgrupamento": 0.019962463,
+            "DataCom": "2022-08-11",
+            "DataPagamento": "2022-08-31"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.008478151,
+            "ValorEventoDesdobramentoAgrupamento": 0.008478151,
+            "DataCom": "2022-08-11",
+            "DataPagamento": "2022-08-31"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.051760415,
+            "ValorEventoDesdobramentoAgrupamento": 0.051760415,
+            "DataCom": "2022-05-09",
+            "DataPagamento": "2022-05-25"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.041012827,
+            "ValorEventoDesdobramentoAgrupamento": 0.041012827,
+            "DataCom": "2022-05-09",
+            "DataPagamento": "2022-05-25"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.0809172,
+            "ValorEventoDesdobramentoAgrupamento": 0.0809172,
+            "DataCom": "2022-05-02",
+            "DataPagamento": "2022-05-18"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.000246651,
+            "ValorEventoDesdobramentoAgrupamento": 0.000246651,
+            "DataCom": "2022-05-02",
+            "DataPagamento": "2022-05-18"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.079441975,
+            "ValorEventoDesdobramentoAgrupamento": 0.079441975,
+            "DataCom": "2021-12-16",
+            "DataPagamento": "2021-12-28"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.149262435,
+            "ValorEventoDesdobramentoAgrupamento": 0.149262435,
+            "DataCom": "2021-11-05",
+            "DataPagamento": "2021-11-24"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.037357917,
+            "ValorEventoDesdobramentoAgrupamento": 0.037357917,
+            "DataCom": "2021-08-05",
+            "DataPagamento": "2021-08-18"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.090861484,
+            "ValorEventoDesdobramentoAgrupamento": 0.090861484,
+            "DataCom": "2021-05-10",
+            "DataPagamento": "2021-05-19"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.386613689,
+            "ValorEventoDesdobramentoAgrupamento": 0.386613689,
+            "DataCom": "2021-04-22",
+            "DataPagamento": "2021-05-12"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.121929591,
+            "ValorEventoDesdobramentoAgrupamento": 0.121929591,
+            "DataCom": "2021-04-22",
+            "DataPagamento": "2021-05-12"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.023872975,
+            "ValorEventoDesdobramentoAgrupamento": 0.023872975,
+            "DataCom": "2020-11-05",
+            "DataPagamento": "2020-11-18"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.121949868,
+            "ValorEventoDesdobramentoAgrupamento": 0.121949868,
+            "DataCom": "2020-05-05",
+            "DataPagamento": "2020-05-20"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.021885548,
+            "ValorEventoDesdobramentoAgrupamento": 0.021885548,
+            "DataCom": "2020-05-05",
+            "DataPagamento": "2020-05-20"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.104000708,
+            "ValorEventoDesdobramentoAgrupamento": 0.104000708,
+            "DataCom": "2019-11-04",
+            "DataPagamento": "2019-11-19"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.017048561,
+            "ValorEventoDesdobramentoAgrupamento": 0.017048561,
+            "DataCom": "2019-08-08",
+            "DataPagamento": "2019-08-21"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.040753032,
+            "ValorEventoDesdobramentoAgrupamento": 0.040753032,
+            "DataCom": "2019-05-09",
+            "DataPagamento": "2019-05-22"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.014891133,
+            "ValorEventoDesdobramentoAgrupamento": 0.014891133,
+            "DataCom": "2019-04-23",
+            "DataPagamento": "2019-05-08"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.144098608,
+            "ValorEventoDesdobramentoAgrupamento": 0.144098608,
+            "DataCom": "2019-04-23",
+            "DataPagamento": "2019-05-08"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.052457439,
+            "ValorEventoDesdobramentoAgrupamento": 0.052457439,
+            "DataCom": "2018-11-05",
+            "DataPagamento": "2018-11-21"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.037418208,
+            "ValorEventoDesdobramentoAgrupamento": 0.037418208,
+            "DataCom": "2018-08-06",
+            "DataPagamento": "2018-08-22"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.10057090266666667,
+            "ValorEventoDesdobramentoAgrupamento": 0.301712708,
+            "DataCom": "2018-05-07",
+            "DataPagamento": "2018-05-23"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.14409860766666666,
+            "ValorEventoDesdobramentoAgrupamento": 0.432295823,
+            "DataCom": "2018-05-03",
+            "DataPagamento": "2018-05-16"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.021758889666666666,
+            "ValorEventoDesdobramentoAgrupamento": 0.065276669,
+            "DataCom": "2018-05-03",
+            "DataPagamento": "2018-05-16"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.08145199533333333,
+            "ValorEventoDesdobramentoAgrupamento": 0.244355986,
+            "DataCom": "2017-11-06",
+            "DataPagamento": "2017-11-22"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.061613891,
+            "ValorEventoDesdobramentoAgrupamento": 0.184841673,
+            "DataCom": "2017-08-03",
+            "DataPagamento": "2017-08-16"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.033254359,
+            "ValorEventoDesdobramentoAgrupamento": 0.099763077,
+            "DataCom": "2017-05-02",
+            "DataPagamento": "2017-05-17"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.07657155433333333,
+            "ValorEventoDesdobramentoAgrupamento": 0.229714663,
+            "DataCom": "2017-05-02",
+            "DataPagamento": "2017-05-17"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.020610894333333334,
+            "ValorEventoDesdobramentoAgrupamento": 0.061832683,
+            "DataCom": "2017-04-12",
+            "DataPagamento": "2017-04-26"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.14410222233333334,
+            "ValorEventoDesdobramentoAgrupamento": 0.432306667,
+            "DataCom": "2017-04-12",
+            "DataPagamento": "2017-04-26"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.08434540766666666,
+            "ValorEventoDesdobramentoAgrupamento": 0.253036223,
+            "DataCom": "2016-10-27",
+            "DataPagamento": "2016-11-16"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.05044023533333333,
+            "ValorEventoDesdobramentoAgrupamento": 0.151320706,
+            "DataCom": "2016-08-02",
+            "DataPagamento": "2016-08-17"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.033253525,
+            "ValorEventoDesdobramentoAgrupamento": 0.099760575,
+            "DataCom": "2016-05-03",
+            "DataPagamento": "2016-05-18"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.056742512,
+            "ValorEventoDesdobramentoAgrupamento": 0.170227536,
+            "DataCom": "2016-05-03",
+            "DataPagamento": "2016-05-18"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.012075621,
+            "ValorEventoDesdobramentoAgrupamento": 0.036226863,
+            "DataCom": "2016-04-14",
+            "DataPagamento": "2016-04-27"
+        },
+        {
+            "Tipo": "JCP",
+            "ValorOriginal": 0.110845083,
+            "ValorEventoDesdobramentoAgrupamento": 0.332535249,
+            "DataCom": "2016-04-14",
+            "DataPagamento": "2016-04-27"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.04865962615666667,
+            "ValorEventoDesdobramentoAgrupamento": 0.14597887847,
+            "DataCom": "2015-07-29",
+            "DataPagamento": "2015-08-12"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.07470853384333333,
+            "ValorEventoDesdobramentoAgrupamento": 0.22412560153,
+            "DataCom": "2015-04-27",
+            "DataPagamento": "2015-05-13"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.10666666666666667,
+            "ValorEventoDesdobramentoAgrupamento": 0.32,
+            "DataCom": "2015-04-09",
+            "DataPagamento": "2015-04-23"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.05935172758666667,
+            "ValorEventoDesdobramentoAgrupamento": 0.17805518276,
+            "DataCom": "2014-10-30",
+            "DataPagamento": "2014-11-12"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.03314898461666667,
+            "ValorEventoDesdobramentoAgrupamento": 0.09944695385,
+            "DataCom": "2014-07-31",
+            "DataPagamento": "2014-08-13"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.04668773006666667,
+            "ValorEventoDesdobramentoAgrupamento": 0.1400631902,
+            "DataCom": "2014-04-29",
+            "DataPagamento": "2014-05-14"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.12283004794666667,
+            "ValorEventoDesdobramentoAgrupamento": 0.36849014384,
+            "DataCom": "2014-04-10",
+            "DataPagamento": "2014-04-23"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.093,
+            "ValorEventoDesdobramentoAgrupamento": 0.279,
+            "DataCom": "2013-11-04",
+            "DataPagamento": "2013-11-14"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.046,
+            "ValorEventoDesdobramentoAgrupamento": 0.138,
+            "DataCom": "2013-08-01",
+            "DataPagamento": "2013-08-14"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.071,
+            "ValorEventoDesdobramentoAgrupamento": 0.213,
+            "DataCom": "2013-05-07",
+            "DataPagamento": "2013-05-22"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.11666666666666667,
+            "ValorEventoDesdobramentoAgrupamento": 0.35,
+            "DataCom": "2013-04-11",
+            "DataPagamento": "2013-04-24"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.096,
+            "ValorEventoDesdobramentoAgrupamento": 0.288,
+            "DataCom": "2012-11-06",
+            "DataPagamento": "2012-11-21"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.04733333333333333,
+            "ValorEventoDesdobramentoAgrupamento": 0.142,
+            "DataCom": "2012-08-06",
+            "DataPagamento": "2012-08-22"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.06533333333333333,
+            "ValorEventoDesdobramentoAgrupamento": 0.196,
+            "DataCom": "2012-05-03",
+            "DataPagamento": "2012-05-16"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.09666666666666666,
+            "ValorEventoDesdobramentoAgrupamento": 0.29,
+            "DataCom": "2012-04-11",
+            "DataPagamento": "2012-04-25"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.067,
+            "ValorEventoDesdobramentoAgrupamento": 0.201,
+            "DataCom": "2011-11-17",
+            "DataPagamento": "2011-11-30"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.029666666666666668,
+            "ValorEventoDesdobramentoAgrupamento": 0.089,
+            "DataCom": "2011-08-18",
+            "DataPagamento": "2011-08-31"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.05,
+            "ValorEventoDesdobramentoAgrupamento": 0.15,
+            "DataCom": "2011-05-19",
+            "DataPagamento": "2011-06-08"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.056666666666666664,
+            "ValorEventoDesdobramentoAgrupamento": 0.17,
+            "DataCom": "2011-04-11",
+            "DataPagamento": "2011-04-26"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.04,
+            "ValorEventoDesdobramentoAgrupamento": 0.12,
+            "DataCom": "2010-11-22",
+            "DataPagamento": "2010-12-08"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.013333333333333332,
+            "ValorEventoDesdobramentoAgrupamento": 0.04,
+            "DataCom": "2010-08-19",
+            "DataPagamento": "2010-09-02"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.025,
+            "ValorEventoDesdobramentoAgrupamento": 0.075,
+            "DataCom": "2010-05-20",
+            "DataPagamento": "2010-06-02"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.037778,
+            "ValorEventoDesdobramentoAgrupamento": 0.113334,
+            "DataCom": "2010-04-26",
+            "DataPagamento": "2010-05-06"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.023333333333333334,
+            "ValorEventoDesdobramentoAgrupamento": 0.07,
+            "DataCom": "2009-11-20",
+            "DataPagamento": "2009-12-02"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.1,
+            "ValorEventoDesdobramentoAgrupamento": 0.3,
+            "DataCom": "2009-08-20",
+            "DataPagamento": "2009-09-02"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.08333333333333333,
+            "ValorEventoDesdobramentoAgrupamento": 0.25,
+            "DataCom": "2009-05-21",
+            "DataPagamento": "2009-06-03"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.14666666666666667,
+            "ValorEventoDesdobramentoAgrupamento": 0.44,
+            "DataCom": "2009-04-08",
+            "DataPagamento": "2009-04-23"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.10333333333333333,
+            "ValorEventoDesdobramentoAgrupamento": 0.31,
+            "DataCom": "2008-11-20",
+            "DataPagamento": "2008-12-03"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.11333333333333333,
+            "ValorEventoDesdobramentoAgrupamento": 0.34,
+            "DataCom": "2008-08-21",
+            "DataPagamento": "2008-09-03"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.15907953666666666,
+            "ValorEventoDesdobramentoAgrupamento": 0.47723861,
+            "DataCom": "2008-04-17",
+            "DataPagamento": "2008-04-30"
+        },
+        {
+            "Tipo": "Dividendo",
+            "ValorOriginal": 0.14,
+            "ValorEventoDesdobramentoAgrupamento": 0.42,
+            "DataCom": "2007-11-15",
+            "DataPagamento": "2007-11-28"
+        }
+    ]
+}

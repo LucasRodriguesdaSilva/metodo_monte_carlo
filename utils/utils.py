@@ -35,7 +35,7 @@ def plotar_linhas(simulacoes,qtd_projecoes, titulo):
     plt.title(f'Distribuição dos Valores Simulados - {titulo}')
     # plt.legend()
     plt.grid(True)
-    saida = __gerar_caminho_output(f'grafico_{titulo}')
+    saida = __gerar_caminho_output(f'simulacao_{titulo}')
     anos_futuros = __gerar_lista_anos(qtd_projecoes=qtd_projecoes)
     plt.xticks(range(qtd_projecoes), anos_futuros)
     plt.savefig(saida)

@@ -1,5 +1,5 @@
 import numpy as np
-
+import random
 
 def escolha_aleatoria(qtd_projecoes, valores_simulados):
     projecoes_anuais = []
@@ -11,14 +11,22 @@ def escolha_aleatoria(qtd_projecoes, valores_simulados):
     return projecoes_anuais
 
 
-def projetar_dados(pesos, serie_historica, n_simulacoes, qtd_projecoes, is_premio_risco = False):
+def ajustar_peso(peso, threshold=0.1):
+    p = np.random.normal(-threshold, threshold)
+    novo_peso = peso * (0.90 + p)
+
+    return novo_peso
+
+
+
+def projetar_dados(serie_historica, n_simulacoes, qtd_projecoes,peso=0.1, is_premio_risco = False):
     """
         Projeta a simulação para uma serie historica e retorna o valores
         simulados com uma distribuição normal e valores escolhidos aleatoriamente
         para o tamanho da projeção requisitada.
 
-        :param pesos: array
-            Array contendo os pesos para cada ano projetado
+        :param peso: float
+            Um valor inicial que com o tempo ira aumentar ou diminuir.
         :param serie_historica: array
             Array contendo a serie historica dos dados
         :param n_simulacoes: int
@@ -41,10 +49,11 @@ def projetar_dados(pesos, serie_historica, n_simulacoes, qtd_projecoes, is_premi
         if isinstance(serie_historica[-1], list):
             valor_atual = serie_historica[-1][-1]
         else:
-            valor_atual = serie_historica[-1]
-
+            valor_atual = serie_historica[-1]       
+        peso = ajustar_peso(peso) # ajusta o peso utilizando a aleatoriedade
         for ano_projetado in range(qtd_projecoes):
-            distribuicao_normal_ponderada = np.random.normal(media, desvio_padrao) * pesos[ano_projetado]
+            # distribuicao_normal_ponderada = np.random.normal(media, desvio_padrao) * pesos[ano_projetado]
+            distribuicao_normal_ponderada = distribuicao_normal_ponderada = np.random.normal(media, desvio_padrao) * peso
             if is_premio_risco:
                 valor_atual = distribuicao_normal_ponderada - valor_atual # Uma forma de projetar o premio de risco
             else:
@@ -57,5 +66,7 @@ def projetar_dados(pesos, serie_historica, n_simulacoes, qtd_projecoes, is_premi
     valores_projetados = escolha_aleatoria(qtd_projecoes=qtd_projecoes,valores_simulados=resultados_simulados)
 
     return valores_projetados, resultados_simulados
+
+
 
 

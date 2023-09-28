@@ -1,0 +1,2281 @@
+{
+    "Dividend Yield": {
+        "key": "Dividend Yield",
+        "currentValue": 22.111,
+        "avgValue": 7.00913076923077,
+        "avgDiffValue": 215.45994400710282,
+        "minValue": 2.0013,
+        "minValueYear": 2020,
+        "maxValue": 22.111,
+        "maxValueYear": 2023,
+        "series": [
+            {
+                "year": 2023,
+                "value": 22.111
+            },
+            {
+                "year": 2022,
+                "value": 5.0679
+            },
+            {
+                "year": 2021,
+                "value": 10.0054
+            },
+            {
+                "year": 2020,
+                "value": 2.0013
+            },
+            {
+                "year": 2019,
+                "value": 2.6123
+            },
+            {
+                "year": 2018,
+                "value": 10.8434
+            },
+            {
+                "year": 2017,
+                "value": 4.4036
+            },
+            {
+                "year": 2016,
+                "value": 5.9335
+            },
+            {
+                "year": 2015,
+                "value": 4.098
+            },
+            {
+                "year": 2014,
+                "value": 5.1376
+            },
+            {
+                "year": 2013,
+                "value": 5.4174
+            },
+            {
+                "year": 2012,
+                "value": 5.5549
+            },
+            {
+                "year": 2011,
+                "value": 7.9324
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "P/L": {
+        "key": "P/L",
+        "currentValue": 10.4915,
+        "avgValue": 12.173423076923077,
+        "avgDiffValue": -13.816352773538824,
+        "minValue": 7.571,
+        "minValueYear": 2011,
+        "maxValue": 22.3829,
+        "maxValueYear": 2019,
+        "series": [
+            {
+                "year": 2023,
+                "value": 10.4915
+            },
+            {
+                "year": 2022,
+                "value": 9.5771
+            },
+            {
+                "year": 2021,
+                "value": 12.9844
+            },
+            {
+                "year": 2020,
+                "value": 18.6574
+            },
+            {
+                "year": 2019,
+                "value": 22.3829
+            },
+            {
+                "year": 2018,
+                "value": 12.6342
+            },
+            {
+                "year": 2017,
+                "value": 12.9446
+            },
+            {
+                "year": 2016,
+                "value": 8.3321
+            },
+            {
+                "year": 2015,
+                "value": 9.1871
+            },
+            {
+                "year": 2014,
+                "value": 9.3852
+            },
+            {
+                "year": 2013,
+                "value": 12.5479
+            },
+            {
+                "year": 2012,
+                "value": 11.5591
+            },
+            {
+                "year": 2011,
+                "value": 7.571
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "P/VP": {
+        "key": "P/VP",
+        "currentValue": 1.7327,
+        "avgValue": 2.0516153846153844,
+        "avgDiffValue": -15.544599002662068,
+        "minValue": 1.2465,
+        "minValueYear": 2022,
+        "maxValue": 3.0085,
+        "maxValueYear": 2019,
+        "series": [
+            {
+                "year": 2023,
+                "value": 1.7327
+            },
+            {
+                "year": 2022,
+                "value": 1.2465
+            },
+            {
+                "year": 2021,
+                "value": 1.906
+            },
+            {
+                "year": 2020,
+                "value": 1.7872
+            },
+            {
+                "year": 2019,
+                "value": 3.0085
+            },
+            {
+                "year": 2018,
+                "value": 2.135
+            },
+            {
+                "year": 2017,
+                "value": 2.659
+            },
+            {
+                "year": 2016,
+                "value": 1.8093
+            },
+            {
+                "year": 2015,
+                "value": 1.9355
+            },
+            {
+                "year": 2014,
+                "value": 1.9872
+            },
+            {
+                "year": 2013,
+                "value": 2.6398
+            },
+            {
+                "year": 2012,
+                "value": 2.54
+            },
+            {
+                "year": 2011,
+                "value": 1.2843
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "P/EBITDA": {
+        "key": "P/EBITDA",
+        "currentValue": 15.3307,
+        "avgValue": 15.029275,
+        "avgDiffValue": 2.0055857651150837,
+        "minValue": 10.5317,
+        "minValueYear": 2014,
+        "maxValue": 25.7192,
+        "maxValueYear": 2019,
+        "series": [
+            {
+                "year": 2023,
+                "value": 15.3307
+            },
+            {
+                "year": 2022,
+                "value": 15.0839
+            },
+            {
+                "year": 2021,
+                "value": 16.1024
+            },
+            {
+                "year": 2020,
+                "value": 19.4226
+            },
+            {
+                "year": 2019,
+                "value": 25.7192
+            },
+            {
+                "year": 2018,
+                "value": 14.1522
+            },
+            {
+                "year": 2017,
+                "value": 16.2581
+            },
+            {
+                "year": 2016,
+                "value": 11.5562
+            },
+            {
+                "year": 2015,
+                "value": 11.145
+            },
+            {
+                "year": 2014,
+                "value": 10.5317
+            },
+            {
+                "year": 2013,
+                "value": 12.4805
+            },
+            {
+                "year": 2012,
+                "value": 12.5688
+            },
+            {
+                "year": 2011,
+                "value": null
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "P/EBIT": {
+        "key": "P/EBIT",
+        "currentValue": 25.6038,
+        "avgValue": 18.19306153846154,
+        "avgDiffValue": 40.73387233848238,
+        "minValue": 11.8153,
+        "minValueYear": 2014,
+        "maxValue": 31.3371,
+        "maxValueYear": 2019,
+        "series": [
+            {
+                "year": 2023,
+                "value": 25.6038
+            },
+            {
+                "year": 2022,
+                "value": 22.7502
+            },
+            {
+                "year": 2021,
+                "value": 19.8304
+            },
+            {
+                "year": 2020,
+                "value": 25.1
+            },
+            {
+                "year": 2019,
+                "value": 31.3371
+            },
+            {
+                "year": 2018,
+                "value": 16.1889
+            },
+            {
+                "year": 2017,
+                "value": 18.3756
+            },
+            {
+                "year": 2016,
+                "value": 13.2301
+            },
+            {
+                "year": 2015,
+                "value": 12.6372
+            },
+            {
+                "year": 2014,
+                "value": 11.8153
+            },
+            {
+                "year": 2013,
+                "value": 13.6262
+            },
+            {
+                "year": 2012,
+                "value": 13.6678
+            },
+            {
+                "year": 2011,
+                "value": 12.3472
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "PSR": {
+        "key": "PSR",
+        "currentValue": 2.3752,
+        "avgValue": 2.907792307692308,
+        "avgDiffValue": -18.31603675005886,
+        "minValue": 1.5597,
+        "minValueYear": 2011,
+        "maxValue": 5.3493,
+        "maxValueYear": 2019,
+        "series": [
+            {
+                "year": 2023,
+                "value": 2.3752
+            },
+            {
+                "year": 2022,
+                "value": 2.165
+            },
+            {
+                "year": 2021,
+                "value": 3.3313
+            },
+            {
+                "year": 2020,
+                "value": 3.9857
+            },
+            {
+                "year": 2019,
+                "value": 5.3493
+            },
+            {
+                "year": 2018,
+                "value": 3.1703
+            },
+            {
+                "year": 2017,
+                "value": 3.7991
+            },
+            {
+                "year": 2016,
+                "value": 2.585
+            },
+            {
+                "year": 2015,
+                "value": 2.299
+            },
+            {
+                "year": 2014,
+                "value": 2.0602
+            },
+            {
+                "year": 2013,
+                "value": 2.4871
+            },
+            {
+                "year": 2012,
+                "value": 2.6344
+            },
+            {
+                "year": 2011,
+                "value": 1.5597
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "P/Ativo": {
+        "key": "P/Ativo",
+        "currentValue": 1.5766,
+        "avgValue": 1.8202307692307693,
+        "avgDiffValue": -13.38460888306639,
+        "minValue": 1.1282,
+        "minValueYear": 2022,
+        "maxValue": 2.7257,
+        "maxValueYear": 2019,
+        "series": [
+            {
+                "year": 2023,
+                "value": 1.5766
+            },
+            {
+                "year": 2022,
+                "value": 1.1282
+            },
+            {
+                "year": 2021,
+                "value": 1.7134
+            },
+            {
+                "year": 2020,
+                "value": 1.6169
+            },
+            {
+                "year": 2019,
+                "value": 2.7257
+            },
+            {
+                "year": 2018,
+                "value": 1.9161
+            },
+            {
+                "year": 2017,
+                "value": 2.3925
+            },
+            {
+                "year": 2016,
+                "value": 1.6248
+            },
+            {
+                "year": 2015,
+                "value": 1.6627
+            },
+            {
+                "year": 2014,
+                "value": 1.7155
+            },
+            {
+                "year": 2013,
+                "value": 2.296
+            },
+            {
+                "year": 2012,
+                "value": 2.1641
+            },
+            {
+                "year": 2011,
+                "value": 1.1305
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "P/Capital de Giro": {
+        "key": "P/Capital de Giro",
+        "currentValue": 2.9702,
+        "avgValue": 3.0164615384615385,
+        "avgDiffValue": -1.5336359463456928,
+        "minValue": 1.4578,
+        "minValueYear": 2011,
+        "maxValue": 4.7007,
+        "maxValueYear": 2019,
+        "series": [
+            {
+                "year": 2023,
+                "value": 2.9702
+            },
+            {
+                "year": 2022,
+                "value": 2.1247
+            },
+            {
+                "year": 2021,
+                "value": 2.9148
+            },
+            {
+                "year": 2020,
+                "value": 2.651
+            },
+            {
+                "year": 2019,
+                "value": 4.7007
+            },
+            {
+                "year": 2018,
+                "value": 2.8859
+            },
+            {
+                "year": 2017,
+                "value": 3.3886
+            },
+            {
+                "year": 2016,
+                "value": 2.384
+            },
+            {
+                "year": 2015,
+                "value": 3.2584
+            },
+            {
+                "year": 2014,
+                "value": 2.8322
+            },
+            {
+                "year": 2013,
+                "value": 3.8609
+            },
+            {
+                "year": 2012,
+                "value": 3.7848
+            },
+            {
+                "year": 2011,
+                "value": 1.4578
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "P/ACL": {
+        "key": "P/ACL",
+        "currentValue": -4.048,
+        "avgValue": -6.758738461538462,
+        "avgDiffValue": 40.107166107466576,
+        "minValue": -11.7332,
+        "minValueYear": 2017,
+        "maxValue": -2.9349,
+        "maxValueYear": 2022,
+        "series": [
+            {
+                "year": 2023,
+                "value": -4.048
+            },
+            {
+                "year": 2022,
+                "value": -2.9349
+            },
+            {
+                "year": 2021,
+                "value": -5.2166
+            },
+            {
+                "year": 2020,
+                "value": -5.133
+            },
+            {
+                "year": 2019,
+                "value": -7.8587
+            },
+            {
+                "year": 2018,
+                "value": -7.9507
+            },
+            {
+                "year": 2017,
+                "value": -11.7332
+            },
+            {
+                "year": 2016,
+                "value": -6.9484
+            },
+            {
+                "year": 2015,
+                "value": -4.454
+            },
+            {
+                "year": 2014,
+                "value": -5.9331
+            },
+            {
+                "year": 2013,
+                "value": -8.056
+            },
+            {
+                "year": 2012,
+                "value": -7.5341
+            },
+            {
+                "year": 2011,
+                "value": -10.0629
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "EV/EBITDA": {
+        "key": "EV/EBITDA",
+        "currentValue": 13.5921,
+        "avgValue": 12.96045,
+        "avgDiffValue": 4.873673367822876,
+        "minValue": 8.9695,
+        "minValueYear": 2016,
+        "maxValue": 23.0326,
+        "maxValueYear": 2019,
+        "series": [
+            {
+                "year": 2023,
+                "value": 13.5921
+            },
+            {
+                "year": 2022,
+                "value": 12.227
+            },
+            {
+                "year": 2021,
+                "value": 13.7927
+            },
+            {
+                "year": 2020,
+                "value": 15.8205
+            },
+            {
+                "year": 2019,
+                "value": 23.0326
+            },
+            {
+                "year": 2018,
+                "value": 11.4499
+            },
+            {
+                "year": 2017,
+                "value": 13.5141
+            },
+            {
+                "year": 2016,
+                "value": 8.9695
+            },
+            {
+                "year": 2015,
+                "value": 10.253
+            },
+            {
+                "year": 2014,
+                "value": 9.4114
+            },
+            {
+                "year": 2013,
+                "value": 11.7595
+            },
+            {
+                "year": 2012,
+                "value": 11.7031
+            },
+            {
+                "year": 2011,
+                "value": null
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "EV/EBIT": {
+        "key": "EV/EBIT",
+        "currentValue": 22.7002,
+        "avgValue": 15.467369230769231,
+        "avgDiffValue": 46.76186791249867,
+        "minValue": 8.0496,
+        "minValueYear": 2011,
+        "maxValue": 28.0636,
+        "maxValueYear": 2019,
+        "series": [
+            {
+                "year": 2023,
+                "value": 22.7002
+            },
+            {
+                "year": 2022,
+                "value": 18.4413
+            },
+            {
+                "year": 2021,
+                "value": 16.986
+            },
+            {
+                "year": 2020,
+                "value": 20.445
+            },
+            {
+                "year": 2019,
+                "value": 28.0636
+            },
+            {
+                "year": 2018,
+                "value": 13.0977
+            },
+            {
+                "year": 2017,
+                "value": 15.2742
+            },
+            {
+                "year": 2016,
+                "value": 10.2687
+            },
+            {
+                "year": 2015,
+                "value": 11.6257
+            },
+            {
+                "year": 2014,
+                "value": 10.5584
+            },
+            {
+                "year": 2013,
+                "value": 12.839
+            },
+            {
+                "year": 2012,
+                "value": 12.7264
+            },
+            {
+                "year": 2011,
+                "value": 8.0496
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "LPA": {
+        "key": "LPA",
+        "currentValue": 0.6176,
+        "avgValue": 1.1703923076923077,
+        "avgDiffValue": -47.231368837536394,
+        "minValue": 0.4492,
+        "minValueYear": 2020,
+        "maxValue": 2.1978,
+        "maxValueYear": 2017,
+        "series": [
+            {
+                "year": 2023,
+                "value": 0.6176
+            },
+            {
+                "year": 2022,
+                "value": 0.6296
+            },
+            {
+                "year": 2021,
+                "value": 0.6662
+            },
+            {
+                "year": 2020,
+                "value": 0.4492
+            },
+            {
+                "year": 2019,
+                "value": 0.5486
+            },
+            {
+                "year": 2018,
+                "value": 0.649
+            },
+            {
+                "year": 2017,
+                "value": 2.1978
+            },
+            {
+                "year": 2016,
+                "value": 2.1099
+            },
+            {
+                "year": 2015,
+                "value": 1.833
+            },
+            {
+                "year": 2014,
+                "value": 1.6302
+            },
+            {
+                "year": 2013,
+                "value": 1.4417
+            },
+            {
+                "year": 2012,
+                "value": 1.4266
+            },
+            {
+                "year": 2011,
+                "value": 1.0157
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "VPA": {
+        "key": "VPA",
+        "currentValue": 3.7398,
+        "avgValue": 6.298153846153846,
+        "avgDiffValue": -40.620694709072254,
+        "minValue": 3.7398,
+        "minValueYear": 2023,
+        "maxValue": 10.6997,
+        "maxValueYear": 2017,
+        "series": [
+            {
+                "year": 2023,
+                "value": 3.7398
+            },
+            {
+                "year": 2022,
+                "value": 4.8374
+            },
+            {
+                "year": 2021,
+                "value": 4.5384
+            },
+            {
+                "year": 2020,
+                "value": 4.6889
+            },
+            {
+                "year": 2019,
+                "value": 4.0818
+            },
+            {
+                "year": 2018,
+                "value": 3.8408
+            },
+            {
+                "year": 2017,
+                "value": 10.6997
+            },
+            {
+                "year": 2016,
+                "value": 9.7167
+            },
+            {
+                "year": 2015,
+                "value": 8.7007
+            },
+            {
+                "year": 2014,
+                "value": 7.6994
+            },
+            {
+                "year": 2013,
+                "value": 6.8527
+            },
+            {
+                "year": 2012,
+                "value": 6.4922
+            },
+            {
+                "year": 2011,
+                "value": 5.9875
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "PEGRatio": {
+        "key": "PEGRatio",
+        "currentValue": -0.90978319,
+        "avgValue": 1.5002729955555556,
+        "avgDiffValue": -160.64117615228452,
+        "minValue": -1.74536262,
+        "minValueYear": 2022,
+        "maxValue": 11.86487743,
+        "maxValueYear": 2013,
+        "series": [
+            {
+                "year": 2023,
+                "value": -0.90978319
+            },
+            {
+                "year": 2022,
+                "value": -1.74536262
+            },
+            {
+                "year": 2021,
+                "value": null
+            },
+            {
+                "year": 2020,
+                "value": null
+            },
+            {
+                "year": 2019,
+                "value": null
+            },
+            {
+                "year": 2018,
+                "value": -1.10748408
+            },
+            {
+                "year": 2017,
+                "value": 3.10673174
+            },
+            {
+                "year": 2016,
+                "value": 0.55156794
+            },
+            {
+                "year": 2015,
+                "value": 0.73859958
+            },
+            {
+                "year": 2014,
+                "value": 0.71755787
+            },
+            {
+                "year": 2013,
+                "value": 11.86487743
+            },
+            {
+                "year": 2012,
+                "value": 0.28575229
+            },
+            {
+                "year": 2011,
+                "value": null
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "Dívida Líquida/Patrimônio": {
+        "key": "Dívida Líquida/Patrimônio",
+        "currentValue": -0.2,
+        "avgValue": -0.32125,
+        "avgDiffValue": 37.7431906614786,
+        "minValue": -0.51,
+        "minValueYear": 2010,
+        "maxValue": -0.15,
+        "maxValueYear": 2015,
+        "series": [
+            {
+                "year": 2023,
+                "value": -0.2
+            },
+            {
+                "year": 2022,
+                "value": -0.24
+            },
+            {
+                "year": 2021,
+                "value": -0.27
+            },
+            {
+                "year": 2020,
+                "value": -0.33
+            },
+            {
+                "year": 2019,
+                "value": -0.31
+            },
+            {
+                "year": 2018,
+                "value": -0.41
+            },
+            {
+                "year": 2017,
+                "value": -0.45
+            },
+            {
+                "year": 2016,
+                "value": -0.4
+            },
+            {
+                "year": 2015,
+                "value": -0.15
+            },
+            {
+                "year": 2014,
+                "value": -0.21
+            },
+            {
+                "year": 2013,
+                "value": -0.15
+            },
+            {
+                "year": 2012,
+                "value": -0.17
+            },
+            {
+                "year": 2011,
+                "value": -0.45
+            },
+            {
+                "year": 2010,
+                "value": -0.51
+            },
+            {
+                "year": 2009,
+                "value": -0.45
+            },
+            {
+                "year": 2008,
+                "value": -0.44
+            }
+        ]
+    },
+    "Dívida Líquida/EBITDA": {
+        "key": "Dívida Líquida/EBITDA",
+        "currentValue": -1.74,
+        "avgValue": -2.069166666666667,
+        "avgDiffValue": 15.908175594039468,
+        "minValue": -3.6,
+        "minValueYear": 2020,
+        "maxValue": -0.72,
+        "maxValueYear": 2013,
+        "series": [
+            {
+                "year": 2023,
+                "value": -1.74
+            },
+            {
+                "year": 2022,
+                "value": -2.86
+            },
+            {
+                "year": 2021,
+                "value": -2.31
+            },
+            {
+                "year": 2020,
+                "value": -3.6
+            },
+            {
+                "year": 2019,
+                "value": -2.69
+            },
+            {
+                "year": 2018,
+                "value": -2.7
+            },
+            {
+                "year": 2017,
+                "value": -2.74
+            },
+            {
+                "year": 2016,
+                "value": -2.59
+            },
+            {
+                "year": 2015,
+                "value": -0.89
+            },
+            {
+                "year": 2014,
+                "value": -1.12
+            },
+            {
+                "year": 2013,
+                "value": -0.72
+            },
+            {
+                "year": 2012,
+                "value": -0.87
+            },
+            {
+                "year": 2011,
+                "value": null
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "Dívida Líquida/EBIT": {
+        "key": "Dívida Líquida/EBIT",
+        "currentValue": -2.9,
+        "avgValue": -2.954375,
+        "avgDiffValue": 1.8404907975460123,
+        "minValue": -4.66,
+        "minValueYear": 2020,
+        "maxValue": -0.79,
+        "maxValueYear": 2013,
+        "series": [
+            {
+                "year": 2023,
+                "value": -2.9
+            },
+            {
+                "year": 2022,
+                "value": -4.31
+            },
+            {
+                "year": 2021,
+                "value": -2.84
+            },
+            {
+                "year": 2020,
+                "value": -4.66
+            },
+            {
+                "year": 2019,
+                "value": -3.27
+            },
+            {
+                "year": 2018,
+                "value": -3.09
+            },
+            {
+                "year": 2017,
+                "value": -3.1
+            },
+            {
+                "year": 2016,
+                "value": -2.96
+            },
+            {
+                "year": 2015,
+                "value": -1.01
+            },
+            {
+                "year": 2014,
+                "value": -1.26
+            },
+            {
+                "year": 2013,
+                "value": -0.79
+            },
+            {
+                "year": 2012,
+                "value": -0.94
+            },
+            {
+                "year": 2011,
+                "value": -4.3
+            },
+            {
+                "year": 2010,
+                "value": -4.08
+            },
+            {
+                "year": 2009,
+                "value": -4.29
+            },
+            {
+                "year": 2008,
+                "value": -3.47
+            }
+        ]
+    },
+    "Patrimônio/Ativos": {
+        "key": "Patrimônio/Ativos",
+        "currentValue": 0.91,
+        "avgValue": 0.87625,
+        "avgDiffValue": 3.8516405135520686,
+        "minValue": 0.8,
+        "minValueYear": 2008,
+        "maxValue": 0.91,
+        "maxValueYear": 2023,
+        "series": [
+            {
+                "year": 2023,
+                "value": 0.91
+            },
+            {
+                "year": 2022,
+                "value": 0.91
+            },
+            {
+                "year": 2021,
+                "value": 0.9
+            },
+            {
+                "year": 2020,
+                "value": 0.9
+            },
+            {
+                "year": 2019,
+                "value": 0.91
+            },
+            {
+                "year": 2018,
+                "value": 0.9
+            },
+            {
+                "year": 2017,
+                "value": 0.9
+            },
+            {
+                "year": 2016,
+                "value": 0.9
+            },
+            {
+                "year": 2015,
+                "value": 0.86
+            },
+            {
+                "year": 2014,
+                "value": 0.86
+            },
+            {
+                "year": 2013,
+                "value": 0.87
+            },
+            {
+                "year": 2012,
+                "value": 0.85
+            },
+            {
+                "year": 2011,
+                "value": 0.88
+            },
+            {
+                "year": 2010,
+                "value": 0.84
+            },
+            {
+                "year": 2009,
+                "value": 0.83
+            },
+            {
+                "year": 2008,
+                "value": 0.8
+            }
+        ]
+    },
+    "Passivos/Ativos": {
+        "key": "Passivos/Ativos",
+        "currentValue": 0.09,
+        "avgValue": 0.123125,
+        "avgDiffValue": -26.903553299492387,
+        "minValue": 0.09,
+        "minValueYear": 2023,
+        "maxValue": 0.2,
+        "maxValueYear": 2008,
+        "series": [
+            {
+                "year": 2023,
+                "value": 0.09
+            },
+            {
+                "year": 2022,
+                "value": 0.09
+            },
+            {
+                "year": 2021,
+                "value": 0.1
+            },
+            {
+                "year": 2020,
+                "value": 0.1
+            },
+            {
+                "year": 2019,
+                "value": 0.09
+            },
+            {
+                "year": 2018,
+                "value": 0.1
+            },
+            {
+                "year": 2017,
+                "value": 0.1
+            },
+            {
+                "year": 2016,
+                "value": 0.1
+            },
+            {
+                "year": 2015,
+                "value": 0.14
+            },
+            {
+                "year": 2014,
+                "value": 0.13
+            },
+            {
+                "year": 2013,
+                "value": 0.13
+            },
+            {
+                "year": 2012,
+                "value": 0.15
+            },
+            {
+                "year": 2011,
+                "value": 0.12
+            },
+            {
+                "year": 2010,
+                "value": 0.16
+            },
+            {
+                "year": 2009,
+                "value": 0.17
+            },
+            {
+                "year": 2008,
+                "value": 0.2
+            }
+        ]
+    },
+    "Liquidez Corrente": {
+        "key": "Liquidez Corrente",
+        "currentValue": 7.66,
+        "avgValue": 7.271875,
+        "avgDiffValue": 5.337344220025784,
+        "minValue": 5.06,
+        "minValueYear": 2012,
+        "maxValue": 9.12,
+        "maxValueYear": 2020,
+        "series": [
+            {
+                "year": 2023,
+                "value": 7.66
+            },
+            {
+                "year": 2022,
+                "value": 7.28
+            },
+            {
+                "year": 2021,
+                "value": 8.02
+            },
+            {
+                "year": 2020,
+                "value": 9.12
+            },
+            {
+                "year": 2019,
+                "value": 8.91
+            },
+            {
+                "year": 2018,
+                "value": 7.99
+            },
+            {
+                "year": 2017,
+                "value": 8.84
+            },
+            {
+                "year": 2016,
+                "value": 9.05
+            },
+            {
+                "year": 2015,
+                "value": 5.38
+            },
+            {
+                "year": 2014,
+                "value": 6.76
+            },
+            {
+                "year": 2013,
+                "value": 5.94
+            },
+            {
+                "year": 2012,
+                "value": 5.06
+            },
+            {
+                "year": 2011,
+                "value": 7.91
+            },
+            {
+                "year": 2010,
+                "value": 5.84
+            },
+            {
+                "year": 2009,
+                "value": 5.82
+            },
+            {
+                "year": 2008,
+                "value": 6.77
+            }
+        ]
+    },
+    "Margem Bruta": {
+        "key": "Margem Bruta",
+        "currentValue": 42.35,
+        "avgValue": 44.634375,
+        "avgDiffValue": -5.117972414758804,
+        "minValue": 38.88,
+        "minValueYear": 2009,
+        "maxValue": 48.88,
+        "maxValueYear": 2017,
+        "series": [
+            {
+                "year": 2023,
+                "value": 42.35
+            },
+            {
+                "year": 2022,
+                "value": 40.11
+            },
+            {
+                "year": 2021,
+                "value": 43.97
+            },
+            {
+                "year": 2020,
+                "value": 46.1
+            },
+            {
+                "year": 2019,
+                "value": 45.61
+            },
+            {
+                "year": 2018,
+                "value": 47.4
+            },
+            {
+                "year": 2017,
+                "value": 48.88
+            },
+            {
+                "year": 2016,
+                "value": 48.73
+            },
+            {
+                "year": 2015,
+                "value": 48.48
+            },
+            {
+                "year": 2014,
+                "value": 45.94
+            },
+            {
+                "year": 2013,
+                "value": 45.43
+            },
+            {
+                "year": 2012,
+                "value": 46.87
+            },
+            {
+                "year": 2011,
+                "value": 43.31
+            },
+            {
+                "year": 2010,
+                "value": 40.59
+            },
+            {
+                "year": 2009,
+                "value": 38.88
+            },
+            {
+                "year": 2008,
+                "value": 41.5
+            }
+        ]
+    },
+    "Margem EBITDA": {
+        "key": "Margem EBITDA",
+        "currentValue": 15.49,
+        "avgValue": 20.089166666666667,
+        "avgDiffValue": -22.893765296386942,
+        "minValue": 14.35,
+        "minValueYear": 2022,
+        "maxValue": 23.37,
+        "maxValueYear": 2017,
+        "series": [
+            {
+                "year": 2023,
+                "value": 15.49
+            },
+            {
+                "year": 2022,
+                "value": 14.35
+            },
+            {
+                "year": 2021,
+                "value": 20.69
+            },
+            {
+                "year": 2020,
+                "value": 20.52
+            },
+            {
+                "year": 2019,
+                "value": 20.8
+            },
+            {
+                "year": 2018,
+                "value": 22.4
+            },
+            {
+                "year": 2017,
+                "value": 23.37
+            },
+            {
+                "year": 2016,
+                "value": 22.37
+            },
+            {
+                "year": 2015,
+                "value": 20.63
+            },
+            {
+                "year": 2014,
+                "value": 19.56
+            },
+            {
+                "year": 2013,
+                "value": 19.93
+            },
+            {
+                "year": 2012,
+                "value": 20.96
+            },
+            {
+                "year": 2011,
+                "value": null
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "Margem EBIT": {
+        "key": "Margem EBIT",
+        "currentValue": 9.28,
+        "avgValue": 15.676875,
+        "avgDiffValue": -40.80452896384005,
+        "minValue": 9.28,
+        "minValueYear": 2023,
+        "maxValue": 20.67,
+        "maxValueYear": 2017,
+        "series": [
+            {
+                "year": 2023,
+                "value": 9.28
+            },
+            {
+                "year": 2022,
+                "value": 9.52
+            },
+            {
+                "year": 2021,
+                "value": 16.8
+            },
+            {
+                "year": 2020,
+                "value": 15.88
+            },
+            {
+                "year": 2019,
+                "value": 17.07
+            },
+            {
+                "year": 2018,
+                "value": 19.58
+            },
+            {
+                "year": 2017,
+                "value": 20.67
+            },
+            {
+                "year": 2016,
+                "value": 19.54
+            },
+            {
+                "year": 2015,
+                "value": 18.19
+            },
+            {
+                "year": 2014,
+                "value": 17.44
+            },
+            {
+                "year": 2013,
+                "value": 18.25
+            },
+            {
+                "year": 2012,
+                "value": 19.27
+            },
+            {
+                "year": 2011,
+                "value": 12.63
+            },
+            {
+                "year": 2010,
+                "value": 12.99
+            },
+            {
+                "year": 2009,
+                "value": 10.45
+            },
+            {
+                "year": 2008,
+                "value": 13.27
+            }
+        ]
+    },
+    "undefined": {
+        "currentValue": 22.64,
+        "avgValue": 23.070625,
+        "avgDiffValue": -1.8665510795654647,
+        "minValue": 18.7,
+        "minValueYear": 2009,
+        "maxValue": 31.02,
+        "maxValueYear": 2016,
+        "series": [
+            {
+                "year": 2023,
+                "value": 22.64
+            },
+            {
+                "year": 2022,
+                "value": 22.61
+            },
+            {
+                "year": 2021,
+                "value": 25.66
+            },
+            {
+                "year": 2020,
+                "value": 21.36
+            },
+            {
+                "year": 2019,
+                "value": 23.9
+            },
+            {
+                "year": 2018,
+                "value": 25.09
+            },
+            {
+                "year": 2017,
+                "value": 29.35
+            },
+            {
+                "year": 2016,
+                "value": 31.02
+            },
+            {
+                "year": 2015,
+                "value": 25.02
+            },
+            {
+                "year": 2014,
+                "value": 21.95
+            },
+            {
+                "year": 2013,
+                "value": 19.82
+            },
+            {
+                "year": 2012,
+                "value": 22.79
+            },
+            {
+                "year": 2011,
+                "value": 20.6
+            },
+            {
+                "year": 2010,
+                "value": 19.47
+            },
+            {
+                "year": 2009,
+                "value": 18.7
+            },
+            {
+                "year": 2008,
+                "value": 19.15
+            }
+        ]
+    },
+    "ROE": {
+        "key": "ROE",
+        "currentValue": 16.52,
+        "avgValue": 17.750625,
+        "avgDiffValue": -6.932854476955037,
+        "minValue": 9.58,
+        "minValueYear": 2020,
+        "maxValue": 21.97,
+        "maxValueYear": 2012,
+        "series": [
+            {
+                "year": 2023,
+                "value": 16.52
+            },
+            {
+                "year": 2022,
+                "value": 13.02
+            },
+            {
+                "year": 2021,
+                "value": 14.68
+            },
+            {
+                "year": 2020,
+                "value": 9.58
+            },
+            {
+                "year": 2019,
+                "value": 13.44
+            },
+            {
+                "year": 2018,
+                "value": 16.9
+            },
+            {
+                "year": 2017,
+                "value": 20.54
+            },
+            {
+                "year": 2016,
+                "value": 21.71
+            },
+            {
+                "year": 2015,
+                "value": 21.07
+            },
+            {
+                "year": 2014,
+                "value": 21.17
+            },
+            {
+                "year": 2013,
+                "value": 21.04
+            },
+            {
+                "year": 2012,
+                "value": 21.97
+            },
+            {
+                "year": 2011,
+                "value": 16.96
+            },
+            {
+                "year": 2010,
+                "value": 18.65
+            },
+            {
+                "year": 2009,
+                "value": 18.59
+            },
+            {
+                "year": 2008,
+                "value": 18.17
+            }
+        ]
+    },
+    "ROA": {
+        "key": "ROA",
+        "currentValue": 15.03,
+        "avgValue": 15.4925,
+        "avgDiffValue": -2.98531547522995,
+        "minValue": 8.67,
+        "minValueYear": 2020,
+        "maxValue": 19.5,
+        "maxValueYear": 2016,
+        "series": [
+            {
+                "year": 2023,
+                "value": 15.03
+            },
+            {
+                "year": 2022,
+                "value": 11.78
+            },
+            {
+                "year": 2021,
+                "value": 13.2
+            },
+            {
+                "year": 2020,
+                "value": 8.67
+            },
+            {
+                "year": 2019,
+                "value": 12.18
+            },
+            {
+                "year": 2018,
+                "value": 15.17
+            },
+            {
+                "year": 2017,
+                "value": 18.48
+            },
+            {
+                "year": 2016,
+                "value": 19.5
+            },
+            {
+                "year": 2015,
+                "value": 18.1
+            },
+            {
+                "year": 2014,
+                "value": 18.28
+            },
+            {
+                "year": 2013,
+                "value": 18.3
+            },
+            {
+                "year": 2012,
+                "value": 18.72
+            },
+            {
+                "year": 2011,
+                "value": 14.93
+            },
+            {
+                "year": 2010,
+                "value": 15.63
+            },
+            {
+                "year": 2009,
+                "value": 15.4
+            },
+            {
+                "year": 2008,
+                "value": 14.51
+            }
+        ]
+    },
+    "ROIC": {
+        "key": "ROIC",
+        "currentValue": 5.87,
+        "avgValue": 10.16,
+        "avgDiffValue": -42.224409448818896,
+        "minValue": 5.14,
+        "minValueYear": 2022,
+        "maxValue": 15.12,
+        "maxValueYear": 2013,
+        "series": [
+            {
+                "year": 2023,
+                "value": 5.87
+            },
+            {
+                "year": 2022,
+                "value": 5.14
+            },
+            {
+                "year": 2021,
+                "value": 8.03
+            },
+            {
+                "year": 2020,
+                "value": 6.18
+            },
+            {
+                "year": 2019,
+                "value": 8.21
+            },
+            {
+                "year": 2018,
+                "value": 11.79
+            },
+            {
+                "year": 2017,
+                "value": 12.64
+            },
+            {
+                "year": 2016,
+                "value": 11.99
+            },
+            {
+                "year": 2015,
+                "value": 12.62
+            },
+            {
+                "year": 2014,
+                "value": 13.99
+            },
+            {
+                "year": 2013,
+                "value": 15.12
+            },
+            {
+                "year": 2012,
+                "value": 14.22
+            },
+            {
+                "year": 2011,
+                "value": 7.97
+            },
+            {
+                "year": 2010,
+                "value": 10.23
+            },
+            {
+                "year": 2009,
+                "value": 8.5
+            },
+            {
+                "year": 2008,
+                "value": 10.06
+            }
+        ]
+    },
+    "Giro Ativos": {
+        "key": "Giro Ativos",
+        "currentValue": 0.66,
+        "avgValue": 0.67875,
+        "avgDiffValue": -2.7624309392265194,
+        "minValue": 0.41,
+        "minValueYear": 2020,
+        "maxValue": 0.92,
+        "maxValueYear": 2013,
+        "series": [
+            {
+                "year": 2023,
+                "value": 0.66
+            },
+            {
+                "year": 2022,
+                "value": 0.52
+            },
+            {
+                "year": 2021,
+                "value": 0.51
+            },
+            {
+                "year": 2020,
+                "value": 0.41
+            },
+            {
+                "year": 2019,
+                "value": 0.51
+            },
+            {
+                "year": 2018,
+                "value": 0.6
+            },
+            {
+                "year": 2017,
+                "value": 0.63
+            },
+            {
+                "year": 2016,
+                "value": 0.63
+            },
+            {
+                "year": 2015,
+                "value": 0.72
+            },
+            {
+                "year": 2014,
+                "value": 0.83
+            },
+            {
+                "year": 2013,
+                "value": 0.92
+            },
+            {
+                "year": 2012,
+                "value": 0.82
+            },
+            {
+                "year": 2011,
+                "value": 0.72
+            },
+            {
+                "year": 2010,
+                "value": 0.8
+            },
+            {
+                "year": 2009,
+                "value": 0.82
+            },
+            {
+                "year": 2008,
+                "value": 0.76
+            }
+        ]
+    },
+    "CAGR Receitas 5 Anos": {
+        "key": "CAGR Receitas 5 Anos",
+        "currentValue": 2.21,
+        "avgValue": 3.7845454545454547,
+        "avgDiffValue": -41.60461205861158,
+        "minValue": -2.95,
+        "minValueYear": 2020,
+        "maxValue": 11.84,
+        "maxValueYear": 2013,
+        "series": [
+            {
+                "year": 2023,
+                "value": 2.21
+            },
+            {
+                "year": 2022,
+                "value": 2.21
+            },
+            {
+                "year": 2021,
+                "value": 2.75
+            },
+            {
+                "year": 2020,
+                "value": -2.95
+            },
+            {
+                "year": 2019,
+                "value": -1.5
+            },
+            {
+                "year": 2018,
+                "value": 1.3
+            },
+            {
+                "year": 2017,
+                "value": 3.65
+            },
+            {
+                "year": 2016,
+                "value": 6.64
+            },
+            {
+                "year": 2015,
+                "value": 6.54
+            },
+            {
+                "year": 2014,
+                "value": 8.94
+            },
+            {
+                "year": 2013,
+                "value": 11.84
+            },
+            {
+                "year": 2012,
+                "value": null
+            },
+            {
+                "year": 2011,
+                "value": null
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    },
+    "CAGR Lucros 5 Anos": {
+        "key": "CAGR Lucros 5 Anos",
+        "currentValue": -3.36,
+        "avgValue": 4.99,
+        "avgDiffValue": -167.33466933867734,
+        "minValue": -5.97,
+        "minValueYear": 2020,
+        "maxValue": 15.74,
+        "maxValueYear": 2016,
+        "series": [
+            {
+                "year": 2023,
+                "value": -3.36
+            },
+            {
+                "year": 2022,
+                "value": -2.98
+            },
+            {
+                "year": 2021,
+                "value": -1.08
+            },
+            {
+                "year": 2020,
+                "value": -5.97
+            },
+            {
+                "year": 2019,
+                "value": 0.19
+            },
+            {
+                "year": 2018,
+                "value": 6.19
+            },
+            {
+                "year": 2017,
+                "value": 9.03
+            },
+            {
+                "year": 2016,
+                "value": 15.74
+            },
+            {
+                "year": 2015,
+                "value": 12.03
+            },
+            {
+                "year": 2014,
+                "value": 12.49
+            },
+            {
+                "year": 2013,
+                "value": 12.61
+            },
+            {
+                "year": 2012,
+                "value": null
+            },
+            {
+                "year": 2011,
+                "value": null
+            },
+            {
+                "year": 2010,
+                "value": null
+            },
+            {
+                "year": 2009,
+                "value": null
+            },
+            {
+                "year": 2008,
+                "value": null
+            }
+        ]
+    }
+}
