@@ -1,25 +1,10 @@
 import numpy as np
 import random
 
-def escolha_aleatoria(qtd_projecoes, valores_simulados):
-    projecoes_anuais = []
-    for ano in range(qtd_projecoes):
-        simulacao_ano = valores_simulados[ano]
-        valor_escolhido = np.random.choice(simulacao_ano)
-        projecoes_anuais.append(valor_escolhido)
+def ultimo_ano_projetado(qtd_projecoes, valores_simulados):
+    return valores_simulados[-1]
 
-    return projecoes_anuais
-
-
-def ajustar_peso(peso, threshold=0.1):
-    p = np.random.normal(-threshold, threshold)
-    novo_peso = peso * (0.90 + p)
-
-    return novo_peso
-
-
-
-def projetar_dados(serie_historica, n_simulacoes, qtd_projecoes,peso=0.1, is_premio_risco = False):
+def projetar_dados(serie_historica, n_simulacoes, qtd_projecoes, is_premio_risco = False):
     """
         Projeta a simulação para uma serie historica e retorna o valores
         simulados com uma distribuição normal e valores escolhidos aleatoriamente
@@ -50,20 +35,15 @@ def projetar_dados(serie_historica, n_simulacoes, qtd_projecoes,peso=0.1, is_pre
             valor_atual = serie_historica[-1][-1]
         else:
             valor_atual = serie_historica[-1]       
-        peso = ajustar_peso(peso) # ajusta o peso utilizando a aleatoriedade
         for ano_projetado in range(qtd_projecoes):
-            # distribuicao_normal_ponderada = np.random.normal(media, desvio_padrao) * pesos[ano_projetado]
-            distribuicao_normal_ponderada = distribuicao_normal_ponderada = np.random.normal(media, desvio_padrao) * peso
-            if is_premio_risco:
-                valor_atual = distribuicao_normal_ponderada - valor_atual # Uma forma de projetar o premio de risco
-            else:
-                valor_atual = valor_atual * (1 + distribuicao_normal_ponderada)
+            distribuicao_normal = np.random.normal(media, desvio_padrao)
+            valor_atual = valor_atual * (1 + distribuicao_normal)
 
             simulacao_atual.append(valor_atual)
 
         resultados_simulados.append(np.array(simulacao_atual))
 
-    valores_projetados = escolha_aleatoria(qtd_projecoes=qtd_projecoes,valores_simulados=resultados_simulados)
+    valores_projetados = ultimo_ano_projetado(qtd_projecoes=qtd_projecoes,valores_simulados=resultados_simulados)
 
     return valores_projetados, resultados_simulados
 
