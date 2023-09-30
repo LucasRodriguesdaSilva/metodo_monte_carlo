@@ -150,6 +150,9 @@ class Valuation:
 
         fcd = calculos.calculo_fcd(fcff_projetado=fcff, wacc_projetado=wacc, qtd_projecoes=self.qtd_projecoes, n_simulacoes=self.n_simulacoes)
 
+        np_fcd = np.array(fcd)
+        np.savetxt('fcd.txt',np_fcd, delimiter=',')
+
         ano = ut.get_ultimo_ano(self.qtd_projecoes)
 
         ut.plotar_hist(fcd, f'Simulação do FCD - Ano de {ano} ')

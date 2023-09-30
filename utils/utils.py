@@ -37,7 +37,7 @@ def plotar_linhas(simulacoes,qtd_projecoes, titulo, n_simulacoes):
     plt.title(titulo)
     # plt.legend()
     plt.grid(True)
-    saida = __gerar_caminho_output(f'simulacao - {titulo}')
+    saida = __gerar_caminho_output(f'simulacao - {n_simulacoes} - {qtd_projecoes} - {titulo}')
     anos_futuros = __gerar_lista_anos(qtd_projecoes=qtd_projecoes)
     plt.xticks(range(qtd_projecoes), anos_futuros)
     plt.savefig(saida)

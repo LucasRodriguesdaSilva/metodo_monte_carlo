@@ -1,17 +1,17 @@
 from utils.valuation import Valuation
 
-qtd_projecoes = 5
-n_simulacoes = 1000
 
-valuantion = Valuation(qtd_projecoes, n_simulacoes)
+def main():
 
-pesos_ipca = [0.1] * qtd_projecoes
+    qtd_projecoes = 10
+    n_simulacoes = 1000
+    ativo = 'GRND3.SA'
 
-ipca_projetado = valuantion.projetar_ipca(pesos=pesos_ipca)
+    VALUATION = Valuation(qtd_projecoes, n_simulacoes,ativo)
+    FCD = VALUATION.projetar_fcd()
 
-print(ipca_projetado)
+    print('concluído !')
 
-
-
+main()
 
 
