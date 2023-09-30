@@ -24,10 +24,9 @@ def __gerar_lista_anos(qtd_projecoes):
 
 
 
-def plotar_linhas(simulacoes,qtd_projecoes, titulo):
+def plotar_linhas(simulacoes,qtd_projecoes, titulo, n_simulacoes):
 
-    # AUMENTAR TAMANHO DA IMAGEM
-    for ano in range(qtd_projecoes):
+    for ano in range(n_simulacoes):
         plt.plot(simulacoes[ano])
 
     plt.xlabel('Valores Simulados (%)')
@@ -54,9 +53,9 @@ def plotar_serie_historia(serie, titulo):
     plt.savefig(saida)
     plt.close()
 
-"""
-def plotar_hist(simulacoes, qtd_projecoes, titulo:
 
+def plotar_hist(simulacoes, titulo):
+    """
     Gera, salva e exibe um histograma dos valores simulados.
 
     :param simulacoes: Array numpy com os valores simulados.
@@ -65,26 +64,25 @@ def plotar_hist(simulacoes, qtd_projecoes, titulo:
     :param bins: int Número de intervalos no histograma.
     :param salvar: boolean Salvar ou não a gráfico.
     :return: null
+    """
 
-
-
-    for i, array in enumerate(simulacoes): 
-        plt.figure(i)
-        plt.hist(array, bins='auto')
+    plt.hist(simulacoes, edgecolor='black')
+   
 
     # anos = __gerar_lista_anos(qtd_projecoes)
-    plt.xlabel('Valores Simulados')
+    plt.xlabel('Valores Simulados (Em Milhões)')
     plt.ylabel('Frequência')
     plt.title(f'Distribuição dos Valores Simulados - {titulo}')
 
     saida = __gerar_caminho_output(f'histograma_{titulo}')
     plt.savefig(saida)
+    plt.show()
     plt.close()
+
+
 """
 
-
 def distribuir_valor(valor, peso, tam_array):
-    """
         Gera um array onde o valor calculado fica no meio
         e para esquerda há um diminuição do peso e para 
         a direita a uma soma do peso
@@ -96,7 +94,7 @@ def distribuir_valor(valor, peso, tam_array):
         :param tam_array: int
             Tamanho do array final
         :return: list
-    """
+    
 
     array = [0] * tam_array
     meio = tam_array // 2
@@ -115,3 +113,4 @@ def is_lista(valor):
         raise TypeError('O valor é uma lista')
     else:
         pass
+"""

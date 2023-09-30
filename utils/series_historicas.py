@@ -4,6 +4,7 @@ import ipeadatapy
 import numpy as np
 from utils import utils as ut
 from utils import calculos
+import pandas as pd
 
 def __get_code_pib():
     return 'PAN4_PIBPMG4'
@@ -111,3 +112,82 @@ def pegar_serie_cje():
     cje = cje / 100
 
     return cje
+
+
+def pegar_serie_fcl():
+    """
+        indices historicos retirados do site da 
+        https://statusinvest.com.br/acoes/grnd3 para o ativo da Grendene.
+
+        Data da última atualização: 28/09/2023
+    """
+    serie = [
+        {
+            'year': 2022,
+            'value': 407.69
+        },
+        {
+            'year': 2021,
+            'value': 690.17
+        },
+        {
+            'year': 2020,
+            'value': 319.29
+        },
+        {
+            'year': 2019,
+            'value': 368.17
+        },
+        {
+            'year': 2018,
+            'value': 335.97
+        },
+        {
+            'year': 2017,
+            'value': 400.26
+        },
+        {
+            'year': 2016,
+            'value': 391.73
+        },
+        {
+            'year': 2015,
+            'value': 244.13
+        },
+        {
+            'year': 2014,
+            'value': 176.94
+        },
+        {
+            'year': 2013,
+            'value': 392.90
+        },
+        {
+            'year': 2012,
+            'value': 214.99
+        },
+        {
+            'year': 2011,
+            'value': 283.08
+        },
+        {
+            'year': 2010,
+            'value': 83.42
+        },
+        {
+            'year': 2009,
+            'value': 210.81
+        },
+        {
+            'year': 2008,
+            'value': 172.94
+        },
+        
+    ]
+
+    df_pl = pd.DataFrame(serie)
+    serie_fcl = df_pl.set_index('year')['value']
+
+    serie_fcl = serie_fcl.values
+
+    return serie_fcl

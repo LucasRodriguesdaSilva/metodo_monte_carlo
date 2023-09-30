@@ -12,6 +12,16 @@ def __pegar_caminho_abs():
     return os.path.dirname(os.path.abspath(__file__))
 
 
+def calculo_fcd(fcff_projetado, wacc_projetado, qtd_projecoes, n_simulacoes):
+    fcd = []
+    for simulacao in range(n_simulacoes):
+        fcd_projetado = fcff_projetado[simulacao] / ((1 + wacc_projetado[simulacao])**qtd_projecoes)
+        fcd.append(fcd_projetado)
+
+    return fcd
+    
+
+
 def calculo_beta(ativo, bench="^BVSP",dias_passados = 3652.5):
     """
         Calcula o Beta de um ativo apartir de x anos passados
@@ -51,35 +61,38 @@ def calculo_wacc(ke, valor_equity, kd, divida_bruta):
 
 
 def calculo_ke(beta, premio_risco, di, cds):
-    di = np.array(di)
-    cds = np.array(cds)
 
     taxa_livre_risco = di - cds
     ke = taxa_livre_risco + (beta * premio_risco)
     return ke
 
+
+# def calculo_fcd(wacc, fcl):
+
+
+
 def pegar_divida_equity():
     """
-        Esses dados foram obtidos por meio do código disponibilizado no github https://github.com/lfreneda/statusinvest com licensa MIT
+        Valores retirados do site da 
+        https://statusinvest.com.br/acoes/grnd3 para o ativo da Grendene.
+        
+        Data da última atualização: 28/09/2023
         
     """
-    arq = os.path.join(__pegar_caminho_abs(),'dados','info.json')
 
-    with open(arq, 'r') as f:
-        dados = json.load(f)
+    papeis = 902160000
 
-    ativos = dados['Ativos']
-    divida = dados['Divida bruta']
-    equity = dados['Valor de mercado']
+    divida = 89361000 # Reais
+    equity = 5927191200
 
-    return ativos, divida, equity
+    return papeis, divida, equity
 
 
 
-def calcular_kd(inflacao, cje_projetado):
+def calcular_kd(inflacao, cje_projetado, n_simulacoes):
     kd = []
-    for ano in range(len(inflacao)):
-        r = inflacao[ano] + cje_projetado[ano]
+    for simulacao in range(n_simulacoes):
+        r = inflacao[simulacao] + cje_projetado[simulacao]
         kd.append(r)
 
     return kd
@@ -89,27 +102,148 @@ def calculo_pl_lpa_json():
         Calculo do PL/LPA, indices historicos retirados do site da 
         https://statusinvest.com.br/acoes/grnd3 para o ativo da Grendene.
 
-        Esses dados foram obtidos por meio do código disponibilizado no github https://github.com/lfreneda/statusinvest com licensa MIT
+        Data da última atualização: 28/09/2023
     """
 
+    pl = [
+            {
+                "year": 2023,
+                "value": 10.4915
+            },
+            {
+                "year": 2022,
+                "value": 9.5771
+            },
+            {
+                "year": 2021,
+                "value": 12.9844
+            },
+            {
+                "year": 2020,
+                "value": 18.6574
+            },
+            {
+                "year": 2019,
+                "value": 22.3829
+            },
+            {
+                "year": 2018,
+                "value": 12.6342
+            },
+            {
+                "year": 2017,
+                "value": 12.9446
+            },
+            {
+                "year": 2016,
+                "value": 8.3321
+            },
+            {
+                "year": 2015,
+                "value": 9.1871
+            },
+            {
+                "year": 2014,
+                "value": 9.3852
+            },
+            {
+                "year": 2013,
+                "value": 12.5479
+            },
+            {
+                "year": 2012,
+                "value": 11.5591
+            },
+            {
+                "year": 2011,
+                "value": 7.571
+            },
+            {
+                "year": 2010,
+                "value": 1e-10
+            },
+            {
+                "year": 2009,
+                "value": 1e-10
+            },
+            {
+                "year": 2008,
+                "value": 1e-10
+            }
+        ]
+    lpa = [
+            {
+                "year": 2023,
+                "value": 0.6176
+            },
+            {
+                "year": 2022,
+                "value": 0.6296
+            },
+            {
+                "year": 2021,
+                "value": 0.6662
+            },
+            {
+                "year": 2020,
+                "value": 0.4492
+            },
+            {
+                "year": 2019,
+                "value": 0.5486
+            },
+            {
+                "year": 2018,
+                "value": 0.649
+            },
+            {
+                "year": 2017,
+                "value": 2.1978
+            },
+            {
+                "year": 2016,
+                "value": 2.1099
+            },
+            {
+                "year": 2015,
+                "value": 1.833
+            },
+            {
+                "year": 2014,
+                "value": 1.6302
+            },
+            {
+                "year": 2013,
+                "value": 1.4417
+            },
+            {
+                "year": 2012,
+                "value": 1.4266
+            },
+            {
+                "year": 2011,
+                "value": 1.0157
+            },
+            {
+                "year": 2010,
+                "value": 1e-10
+            },
+            {
+                "year": 2009,
+                "value": 1e-10
+            },
+            {
+                "year": 2008,
+                "value": 1e-10
+            }
+        ]
 
+    df_pl = pd.DataFrame(pl)
+    df_lpa = pd.DataFrame(lpa)
+    series_pl = df_pl.set_index('year')['value']
+    series_lpa = df_lpa.set_index('year')['value']
 
-    arq = os.path.join(__pegar_caminho_abs(),'dados','dados_historicos.json')
-
-    with open(arq, 'r') as f:
-        dados = json.load(f)
-
-    pl = dados['P/L']['series']
-    lpa = dados['LPA']['series']
-
-    df1 = pd.DataFrame(pl)
-    df2 = pd.DataFrame(lpa)
-    df1['value'] = df1['value'].fillna(1e-10)
-    df2['value'] = df2['value'].fillna(1e-10)
-    series1 = df1.set_index('year')['value']
-    series2 = df2.set_index('year')['value']
-
-    s3 = series1 / series2
+    s3 = series_pl / series_lpa
 
     return s3
 
