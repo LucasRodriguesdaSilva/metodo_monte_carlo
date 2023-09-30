@@ -2,6 +2,21 @@ import numpy as np
 import random
 
 def pegar_ultimo_ano(simulacoes, qtd_projecoes):
+    """
+    Seleciona somente os valores simulados do ultimo ano projetado.
+
+    Parameters
+    ----------
+    simulacoes: array 
+        Array contendo todas as simulações utilizando o Monte Carlo.
+    qtd_projecoes: int 
+        Quantidade de anos projetados.
+    
+    Returns
+    -------
+    ultimo_ano: array
+        Array contendo o ultimo ano projetado.
+    """
     ultimo_ano = []
     for simulacao in simulacoes:
         ultimo_ano.append(simulacao[qtd_projecoes - 1])
@@ -11,21 +26,28 @@ def pegar_ultimo_ano(simulacoes, qtd_projecoes):
 
 def projetar_dados(serie_historica, n_simulacoes, qtd_projecoes):
     """
-        Projeta a simulação para uma serie historica e retorna o valores
-        simulados com uma distribuição normal e valores escolhidos aleatoriamente
-        para o tamanho da projeção requisitada.
+    Projeta dados no futuro utilizando o Método de Monte Carlo.
 
-        :param peso: float
-            Um valor inicial que com o tempo ira aumentar ou diminuir.
-        :param serie_historica: array
-            Array contendo a serie historica dos dados
-        :param n_simulacoes: int
-        :param qtd_projecoes: int
-            Quantidade de projeções no futuro
-        :param is_premio_risco: boolean
-            Flag para calcular com base na selic
-        :return: list
-            Retorna uma lista, contendo os valores projetado e os valores simulados
+    Parameters
+    ----------
+    serie_historica : Pandas.series
+        Série Histórica dos dados.
+    n_simulacoes: int
+        Quantidade de simulações para o método.
+    qtd_projecoes: int 
+        Quantidade de anos projetados.
+
+    Returns
+    -------
+    ultimo_ano: array
+        n Simulações do ultimo ano projetado.
+    resultados_simulados: array
+        Simulação de todos os anos projetados.
+
+    Examples
+    --------
+    >>> projetar({2016: 0.1, ..., 2023: 0.2})
+    [array[0.4,...,0.21],...,array[0.2,...,0.05]]
     """
 
     media = np.mean(serie_historica)
@@ -48,12 +70,37 @@ def projetar_dados(serie_historica, n_simulacoes, qtd_projecoes):
 
 
 def projetar_fcl(serie_fcf, growth_projetado, n_simulacoes, qtd_projecoes):
+    """
+    Projeta dados para o Fluxo de caixa livre no futuro utilizando o Método de Monte Carlo.
+
+    Parameters
+    ----------
+    serie_fcf : Pandas.series
+        Série Histórica do fluxo de caixa livre.
+    growth_projetado: array
+        Growth do ultimo ano projetado. Utilizado para ser a taxa de crescimento do fluxo de caixa
+    n_simulacoes: int
+        Quantidade de simulações para o método.
+    qtd_projecoes: int 
+        Quantidade de anos projetados.
+
+    Returns
+    -------
+    ultimo_ano: array
+        n Simulações do ultimo ano projetado.
+    resultados_simulados: array
+        Simulação de todos os anos projetados.
+
+    Examples
+    --------
+    >>> projetar({2016: 0.1, ..., 2023: 0.2})
+    [array[0.4,...,0.21],...,array[0.2,...,0.05]]
+    """
 
     media = np.mean(growth_projetado)
     desvio_padrao = np.std(growth_projetado)
 
     resultados_simulados = []
-    # fcf_simulado = []
     valor_anterior = serie_fcf[-1]
 
     for _ in range(n_simulacoes):
