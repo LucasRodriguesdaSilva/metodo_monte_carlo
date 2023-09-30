@@ -39,34 +39,11 @@ def projetar_dados(serie_historica, n_simulacoes, qtd_projecoes):
         simulacao_atual = valor_anterior * np.cumprod(valores_aleatorios)
         resultados_simulados = np.vstack([resultados_simulados, simulacao_atual]) if _ > 0 else simulacao_atual
 
-
-    
-    # for _ in range(n_simulacoes):
-    #     simulacao_atual = []
-    #     if isinstance(serie_historica[-1], list):
-    #         valor_atual = serie_historica[-1][-1]
-    #     else:
-    #         valor_atual = serie_historica[-1]  
-
-    #     for ano in range(qtd_projecoes):
-    #         distribuicao_normal = np.random.normal(media, desvio_padrao)
-
-    #         valor_atual = valor_atual * (1 + distribuicao_normal)
-
-    #         simulacao_atual.append(valor_atual)
-
-    #     resultados_simulados.append(np.array(simulacao_atual))
-
     
 
     ultimo_ano = pegar_ultimo_ano(simulacoes=resultados_simulados,qtd_projecoes=qtd_projecoes)
 
     return ultimo_ano, resultados_simulados
-
-
-# def escolher_ultimo_ano_fcl(simulacoes, qtd_projecoes):
-
-#     for simulacao in simulacoes:
 
 
 
@@ -84,32 +61,6 @@ def projetar_fcl(serie_fcf, growth_projetado, n_simulacoes, qtd_projecoes):
         simulacao_atual = valor_anterior * np.cumprod(taxa_crescimento)
         resultados_simulados = np.vstack([resultados_simulados, simulacao_atual]) if _ > 0 else simulacao_atual
 
-
-    # for i in range(n_simulacoes):
-    #     simulacao_atual = []
-
-    #     for _ in range(qtd_projecoes):
-    #         taxa_crescimento = np.random.normal(1 + media, desvio_padrao, size=qtd_projecoes)
-    #         valor_simulado = valor_anterior * np.cumprod(taxa_crescimento)
-    #         valor_anterior = valor_simulado
-    #         simulacao_atual.append(valor_simulado)
-
-
-    #     resultados_simulados = np.vstack([resultados_simulados, simulacao_atual]) if _ > 0 else simulacao_atual
-
-
-    # for i in range(n_simulacoes):
-    #     FCF_simulado = serie_fcf.copy()
-    #     simulacao_atual = []
-    #     for ano in range(len(serie_fcf), len(serie_fcf) + qtd_projecoes):
-    #         taxa_crescimento = np.random.normal(1 + media, desvio_padrao, size=qtd_projecoes)
-    #         FCF_anterior = FCF_simulado[ano - 1]
-    #         FCF_simulado_novo = FCF_anterior * np.cumprod(taxa_crescimento)
-    #         FCF_simulado = np.append(FCF_simulado, FCF_simulado_novo)
-    #         simulacao_atual.append(FCF_simulado_novo)
-        
-    #     resultados_simulados.append(simulacao_atual)
-        # fcf_simulado.append(FCF_simulado)
     
     ultimo_ano = pegar_ultimo_ano(simulacoes=resultados_simulados,qtd_projecoes=qtd_projecoes)
 
