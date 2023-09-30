@@ -30,7 +30,6 @@ class Valuation:
         return self.growth   
 
     def projetar_wacc(self):
-        # self.ipca_projetado = self.projetar_ipca()
 
         self.beta = calculos.calculo_beta(self.ativo)
         beta_projetado = np.array([self.beta] * self.n_simulacoes) 
@@ -49,12 +48,6 @@ class Valuation:
         self.kd_projetado = calculos.calcular_kd(self.ipca_projetado, self.cje_projetado, self.n_simulacoes)
 
         self.wacc = calculos.calculo_wacc(ke=self.ke, valor_equity=self.valor_equity_projetado, kd=self.kd_projetado, divida_bruta=self.divida_bruta_projetado)
-
-        # self.fcl = self.projetar_fluxo_caixa_livre()
-
-        
-
-        # self.array_wacc = ut.distribuir_valor(valor=self.wacc[-1], peso=0.005, tam_array=10)
 
         return self.wacc
 
@@ -157,7 +150,9 @@ class Valuation:
 
         fcd = calculos.calculo_fcd(fcff_projetado=fcff, wacc_projetado=wacc, qtd_projecoes=self.qtd_projecoes, n_simulacoes=self.n_simulacoes)
 
-        ut.plotar_hist(fcd, 'FCD')
+        ano = ut.get_ultimo_ano(self.qtd_projecoes)
+
+        ut.plotar_hist(fcd, f'Simulação do FCD - Ano de {ano} ')
 
         return fcd
 

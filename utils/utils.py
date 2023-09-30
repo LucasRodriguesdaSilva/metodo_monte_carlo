@@ -13,6 +13,9 @@ def __gerar_caminho_output(nome_arquivo, extensao='png'):
     output = os.path.join(dir_name, 'output', arq)
     return output
 
+def get_ultimo_ano(qtd_projecoes):
+    anos = __gerar_lista_anos(qtd_projecoes)
+    return anos[-1]
 
 def __gerar_lista_anos(qtd_projecoes):
 
@@ -25,16 +28,16 @@ def __gerar_lista_anos(qtd_projecoes):
 
 
 def plotar_linhas(simulacoes,qtd_projecoes, titulo, n_simulacoes):
-
+    plt.figure(figsize=(10, 6))
     for ano in range(n_simulacoes):
         plt.plot(simulacoes[ano])
 
     plt.xlabel('Valores Simulados (%)')
     plt.ylabel(titulo)
-    plt.title(f'Distribuição dos Valores Simulados - {titulo}')
+    plt.title(titulo)
     # plt.legend()
     plt.grid(True)
-    saida = __gerar_caminho_output(f'simulacao_{titulo}')
+    saida = __gerar_caminho_output(f'simulacao - {titulo}')
     anos_futuros = __gerar_lista_anos(qtd_projecoes=qtd_projecoes)
     plt.xticks(range(qtd_projecoes), anos_futuros)
     plt.savefig(saida)
@@ -43,13 +46,14 @@ def plotar_linhas(simulacoes,qtd_projecoes, titulo, n_simulacoes):
 
 
 def plotar_serie_historia(serie, titulo):
+    plt.figure(figsize=(10, 6))
     # Plota o gráfico de linha com os dados
     plt.plot(serie)
-    plt.title(f'Distribuição da série histórica - {titulo}')
+    plt.title(titulo)
     plt.xlabel("Anos")
     plt.ylabel("Taxa (%)")
     plt.grid(True)
-    saida = __gerar_caminho_output(f'grafico_serie_historica_{titulo}')
+    saida = __gerar_caminho_output(f'serie - {titulo}')
     plt.savefig(saida)
     plt.close()
 
@@ -70,9 +74,9 @@ def plotar_hist(simulacoes, titulo):
    
 
     # anos = __gerar_lista_anos(qtd_projecoes)
-    plt.xlabel('Valores Simulados (Em Milhões)')
+    plt.xlabel('Valores Simulados (Em Milhões de Reais)')
     plt.ylabel('Frequência')
-    plt.title(f'Distribuição dos Valores Simulados - {titulo}')
+    plt.title(titulo)
 
     saida = __gerar_caminho_output(f'histograma_{titulo}')
     plt.savefig(saida)

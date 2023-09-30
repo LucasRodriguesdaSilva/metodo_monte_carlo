@@ -88,7 +88,7 @@ def pegar_serie_cds():
     serie_cds = ipeadatapy.timeseries(code)['VALUE (-)']
     serie_cds = serie_cds.pct_change().dropna().resample('Y').mean().to_frame()
 
-    ut.plotar_serie_historia(serie=serie_cds,titulo='Var. CDS Anual')
+    ut.plotar_serie_historia(serie=serie_cds,titulo='Credit Default Swap - CDS')
     serie_cds = serie_cds.values
     
     novo_array = []
@@ -106,7 +106,7 @@ def pegar_serie_cje():
     """
     cje = calculos.calculo_pl_lpa_json()
 
-    ut.plotar_serie_historia(serie=cje,titulo='var. da Cobertura de Juros da Empresa')
+    ut.plotar_serie_historia(serie=cje,titulo='Cobertura de Juros da Empresa')
 
     cje = cje.values
     cje = cje / 100
