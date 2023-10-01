@@ -83,38 +83,3 @@ def plotar_hist(simulacoes, titulo):
     plt.show()
     plt.close()
 
-
-"""
-
-def distribuir_valor(valor, peso, tam_array):
-        Gera um array onde o valor calculado fica no meio
-        e para esquerda há um diminuição do peso e para 
-        a direita a uma soma do peso
-
-        :param valor: int
-            Valor principal
-        :param peso: int
-            Um peso para distribuir o valor
-        :param tam_array: int
-            Tamanho do array final
-        :return: list
-    
-
-    array = [0] * tam_array
-    meio = tam_array // 2
-    array[meio] = valor
-
-    for i in range(meio-1, -1, -1):
-        array[i] = array[i+1] - peso
-
-    for i in range(meio+1, tam_array):
-        array[i] = array[i-1] + peso
-
-    return array
-
-def is_lista(valor):
-    if isinstance(valor, list):
-        raise TypeError('O valor é uma lista')
-    else:
-        pass
-"""

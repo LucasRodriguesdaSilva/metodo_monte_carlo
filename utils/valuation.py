@@ -25,15 +25,15 @@ class Valuation:
         Examples
         --------
         >>> projetar({2016: 0.1, ..., 2023: 0.2})
-        [array[0.4,...,0.21],...,array[0.2,...,0.05]]
+        [simulacao 1:[2016:0.4,...,2023:0.21],...,simulacao n:[2016:0.2,...,2023:0.05]]
         """
         
-        simulacao_ultimo_ano, simulacao_completa = monte_carlo.projetar_dados(n_simulacoes=self.n_simulacoes,
+        simulacao_completa = monte_carlo.projetar_dados(n_simulacoes=self.n_simulacoes,
                                                        qtd_projecoes=self.qtd_projecoes,
                                                        serie_historica=serie_historica)
 
 
-        return np.array(simulacao_ultimo_ano), simulacao_completa
+        return simulacao_completa
 
 
     def projetar_growth(self):
@@ -46,11 +46,12 @@ class Valuation:
             Array contendo o growth no ultimo ano das projeções.
 
         """
-        
+
         self.ipca_projetado = self.projetar_ipca()
         self.pib_projetado = self.projetar_pib()
 
         self.growth = calculos.calculo_growth(inflacao=self.ipca_projetado, pib=self.pib_projetado)
+        ut.plotar_linhas(simulacoes=self.growth, qtd_projecoes=self.qtd_projecoes,titulo='Simulação do GROWTH', n_simulacoes=self.n_simulacoes)
 
         return self.growth   
 
@@ -64,9 +65,10 @@ class Valuation:
             Array contendo o WACC no ultimo ano das projeções.
 
         """
+        self.ipca_projetado = self.projetar_ipca()
 
         self.beta = calculos.calculo_beta(self.ativo)
-        beta_projetado = np.array([self.beta] * self.n_simulacoes) 
+        beta_projetado = np.tile(self.beta, (self.n_simulacoes, self.qtd_projecoes)) 
         
         self.premio_risco_projetado = self.projetar_premio_risco()
         self.di_projetado = self.projetar_di()
@@ -75,8 +77,8 @@ class Valuation:
 
         self.ke = calculos.calculo_ke(self.beta, self.premio_risco_projetado, self.di_projetado, self.cds_projetado)
         
-        self.divida_bruta_projetado = np.array([self.divida_bruta] * self.n_simulacoes)
-        self.valor_equity_projetado = np.array([self.valor_equity] * self.n_simulacoes)
+        self.divida_bruta_projetado = np.tile(self.divida_bruta, (self.n_simulacoes, self.qtd_projecoes))
+        self.valor_equity_projetado = np.tile(self.valor_equity, (self.n_simulacoes, self.qtd_projecoes))
         
         self.cje_projetado = self.projetar_cje()
         self.kd_projetado = calculos.calcular_kd(self.ipca_projetado, self.cje_projetado, self.n_simulacoes)
@@ -87,6 +89,8 @@ class Valuation:
             kd=self.kd_projetado, 
             divida_bruta=self.divida_bruta_projetado
         )
+
+        ut.plotar_linhas(simulacoes=self.wacc, qtd_projecoes=self.qtd_projecoes,titulo='Simulação do WACC', n_simulacoes=self.n_simulacoes)
 
         return self.wacc
 
@@ -105,7 +109,7 @@ class Valuation:
         """
 
         serie_historica = sh.pegar_serie_ipca()
-        valores_projetados, simulacao = self.projetar(serie_historica=serie_historica)
+        simulacao = self.projetar(serie_historica=serie_historica)
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
@@ -114,7 +118,7 @@ class Valuation:
             n_simulacoes=self.n_simulacoes
         )
 
-        return valores_projetados
+        return simulacao
 
 
     def projetar_pib(self):
@@ -128,7 +132,7 @@ class Valuation:
         """
 
         serie_historica = sh.pegar_serie_pib()
-        valores_projetados, simulacao = self.projetar(serie_historica=serie_historica)
+        simulacao = self.projetar(serie_historica=serie_historica)
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
@@ -137,7 +141,7 @@ class Valuation:
             n_simulacoes=self.n_simulacoes
         )
 
-        return valores_projetados 
+        return simulacao 
 
 
     def projetar_premio_risco(self):
@@ -150,7 +154,7 @@ class Valuation:
             Valores no ultimo ano das projeções.
         """
         serie_historica = sh.pegar_serie_selic()
-        valores_projetados, simulacao = self.projetar(serie_historica=serie_historica)
+        simulacao = self.projetar(serie_historica=serie_historica)
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
@@ -159,7 +163,7 @@ class Valuation:
             n_simulacoes=self.n_simulacoes
         )
         
-        return valores_projetados
+        return simulacao
 
     def projetar_di(self):
         """
@@ -171,7 +175,7 @@ class Valuation:
             Valores no ultimo ano das projeções.
         """
         serie_historica = sh.pegar_serie_di()
-        valores_projetados, simulacao = self.projetar(serie_historica=serie_historica)
+        simulacao = self.projetar(serie_historica=serie_historica)
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
@@ -180,7 +184,7 @@ class Valuation:
             n_simulacoes=self.n_simulacoes
         )
         
-        return valores_projetados
+        return simulacao
 
     def projetar_cds(self):
         """
@@ -192,7 +196,7 @@ class Valuation:
             Valores no ultimo ano das projeções.
         """
         serie_historica = sh.pegar_serie_cds()
-        valores_projetados, simulacao = self.projetar(serie_historica=serie_historica)
+        simulacao = self.projetar(serie_historica=serie_historica)
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
@@ -201,7 +205,7 @@ class Valuation:
             n_simulacoes=self.n_simulacoes
         )
         
-        return valores_projetados
+        return simulacao
 
     def projetar_cje(self):
         """
@@ -213,7 +217,7 @@ class Valuation:
             Valores no ultimo ano das projeções.
         """
         serie_historica = sh.pegar_serie_cje()
-        valores_projetados, simulacao = self.projetar(serie_historica=serie_historica)
+        simulacao = self.projetar(serie_historica=serie_historica)
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
@@ -222,7 +226,7 @@ class Valuation:
             n_simulacoes=self.n_simulacoes
         )
         
-        return valores_projetados
+        return simulacao
 
     def projetar_fcff(self):
         """
@@ -235,14 +239,14 @@ class Valuation:
         """
         growth = self.projetar_growth()
 
-        np.savetxt('growth.txt',growth, delimiter=',' )
+        media_desvio_growth = calculos.calculo_media_std_por_ano(growth)
 
         serie_historica = sh.pegar_serie_fcl()
-        valores_projetados, simulacao = monte_carlo.projetar_fcl(serie_fcf=serie_historica, growth_projetado=growth, n_simulacoes=self.n_simulacoes, qtd_projecoes=self.qtd_projecoes)
+        simulacao = monte_carlo.projetar_fcl(serie_fcf=serie_historica, dados_growth=media_desvio_growth, n_simulacoes=self.n_simulacoes, qtd_projecoes=self.qtd_projecoes)
 
         ut.plotar_linhas(simulacoes=simulacao, qtd_projecoes=self.qtd_projecoes, titulo='Simulação do Fluxo de Caixa Livre - FCL', n_simulacoes=self.n_simulacoes)
 
-        return valores_projetados
+        return simulacao
     
 
     def projetar_fcd(self):
@@ -258,14 +262,7 @@ class Valuation:
         fcff = self.projetar_fcff()
         wacc = self.projetar_wacc()
 
-        np.savetxt('fcff.txt',fcff, delimiter=',' )
-        np.savetxt('wacc.txt',wacc, delimiter=',' )
-
-
-        fcd = calculos.calculo_fcd(fcff_projetado=fcff, wacc_projetado=wacc, qtd_projecoes=self.qtd_projecoes, n_simulacoes=self.n_simulacoes)
-
-        np_fcd = np.array(fcd)
-        np.savetxt('fcd.txt',np_fcd, delimiter=',')
+        fcd = calculos.calculo_fcd(fcff_projetado=fcff, wacc_projetado=wacc)
 
         ano = ut.get_ultimo_ano(self.qtd_projecoes)
 

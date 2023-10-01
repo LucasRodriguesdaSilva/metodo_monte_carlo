@@ -12,13 +12,15 @@ def __pegar_caminho_abs():
     return os.path.dirname(os.path.abspath(__file__))
 
 
-def calculo_fcd(fcff_projetado, wacc_projetado, qtd_projecoes, n_simulacoes):
-    fcd = []
-    for simulacao in range(n_simulacoes):
-        fcd_projetado = fcff_projetado[simulacao] / ((1 + wacc_projetado[simulacao])**qtd_projecoes)
-        fcd.append(fcd_projetado)
+def calculo_fcd(fcff_projetado, wacc_projetado):
+    resultado = np.zeros_like(fcff_projetado)
+    for ano in range(fcff_projetado.shape[1]):
+        n = ano + 1
+        resultado[:, ano] = fcff_projetado[:, ano] / ((1 + wacc_projetado[:, ano]) ** n)
 
-    return fcd
+    fcd_por_simulacao = np.sum(resultado, axis=1)
+
+    return fcd_por_simulacao
     
 
 
@@ -96,6 +98,29 @@ def calcular_kd(inflacao, cje_projetado, n_simulacoes):
         kd.append(r)
 
     return kd
+
+def calculo_media_std_por_ano(growth):
+    """
+    Calcula a média e o desvio padrão por ano 
+
+    Parameters
+    ----------
+    growth: np.array 
+        Array contendo o growth simulado
+    
+    Returns
+    -------
+    resultado: np.array
+        Array contendo a média e o desvio padrão para cada ano projetado no formato 
+        [[media, desvio],...[media, desvio]]
+    """
+    medias = np.mean(growth, axis=0)
+    desvios_padrao = np.std(growth, axis=0)
+    resultado = np.vstack((medias, desvios_padrao))
+    resultado = resultado.T
+    return resultado
+
+
 
 def calculo_pl_lpa_json():
     """
