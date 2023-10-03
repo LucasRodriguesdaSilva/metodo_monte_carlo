@@ -29,7 +29,7 @@ class Valuation:
         """
         
         simulacao_completa = monte_carlo.projetar_dados(n_simulacoes=self.n_simulacoes,
-                                                       qtd_projecoes=self.qtd_projecoes,
+                                                       qtd_projecoes=self.qtd_anos_projetados,
                                                        serie_historica=serie_historica)
 
 
@@ -51,7 +51,7 @@ class Valuation:
         self.pib_projetado = self.projetar_pib()
 
         self.growth = calculos.calculo_growth(inflacao=self.ipca_projetado, pib=self.pib_projetado)
-        ut.plotar_linhas(simulacoes=self.growth, qtd_projecoes=self.qtd_projecoes,titulo='Simulação do GROWTH', n_simulacoes=self.n_simulacoes)
+        ut.plotar_linhas(simulacoes=self.growth, qtd_projecoes=self.qtd_anos_projetados,titulo='Simulação do GROWTH', n_simulacoes=self.n_simulacoes)
 
         return self.growth   
 
@@ -68,17 +68,20 @@ class Valuation:
         self.ipca_projetado = self.projetar_ipca()
 
         self.beta = calculos.calculo_beta(self.ativo)
-        beta_projetado = np.tile(self.beta, (self.n_simulacoes, self.qtd_projecoes)) 
+        beta_projetado = np.tile(self.beta, (self.n_simulacoes, self.qtd_anos_projetados)) 
         
         self.premio_risco_projetado = self.projetar_premio_risco()
-        self.di_projetado = self.projetar_di()
         self.cds_projetado = self.projetar_cds()
+        self.di_projetado = self.projetar_di()
+
+        self.di_projetado = self.di_projetado.reshape(self.cds_projetado.shape)
+
 
 
         self.ke = calculos.calculo_ke(self.beta, self.premio_risco_projetado, self.di_projetado, self.cds_projetado)
         
-        self.divida_bruta_projetado = np.tile(self.divida_bruta, (self.n_simulacoes, self.qtd_projecoes))
-        self.valor_equity_projetado = np.tile(self.valor_equity, (self.n_simulacoes, self.qtd_projecoes))
+        self.divida_bruta_projetado = np.tile(self.divida_bruta, (self.n_simulacoes, self.qtd_anos_projetados))
+        self.valor_equity_projetado = np.tile(self.valor_equity, (self.n_simulacoes, self.qtd_anos_projetados))
         
         self.cje_projetado = self.projetar_cje()
         self.kd_projetado = calculos.calcular_kd(self.ipca_projetado, self.cje_projetado, self.n_simulacoes)
@@ -90,7 +93,7 @@ class Valuation:
             divida_bruta=self.divida_bruta_projetado
         )
 
-        ut.plotar_linhas(simulacoes=self.wacc, qtd_projecoes=self.qtd_projecoes,titulo='Simulação do WACC', n_simulacoes=self.n_simulacoes)
+        ut.plotar_linhas(simulacoes=self.wacc, qtd_projecoes=self.qtd_anos_projetados,titulo='Simulação do WACC', n_simulacoes=self.n_simulacoes)
 
         return self.wacc
 
@@ -113,7 +116,7 @@ class Valuation:
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
-            qtd_projecoes=self.qtd_projecoes, 
+            qtd_projecoes=self.qtd_anos_projetados, 
             titulo='Simulação do IPCA',
             n_simulacoes=self.n_simulacoes
         )
@@ -136,7 +139,7 @@ class Valuation:
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
-            qtd_projecoes=self.qtd_projecoes, 
+            qtd_projecoes=self.qtd_anos_projetados, 
             titulo='Simulação do PIB Brasileiro',
             n_simulacoes=self.n_simulacoes
         )
@@ -158,7 +161,7 @@ class Valuation:
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
-            qtd_projecoes=self.qtd_projecoes, 
+            qtd_projecoes=self.qtd_anos_projetados, 
             titulo='Simulação do Premio de Risco',
             n_simulacoes=self.n_simulacoes
         )
@@ -174,17 +177,22 @@ class Valuation:
         valores_projetados: np.array
             Valores no ultimo ano das projeções.
         """
-        serie_historica = sh.pegar_serie_di()
-        simulacao = self.projetar(serie_historica=serie_historica)
+        # serie_historica = sh.pegar_serie_di()
+        # di_ettj = self.projetar(serie_historica=serie_historica)
+        di_ettj = calculos.calcular_di(self.qtd_anos_projetados)
 
-        ut.plotar_linhas(
-            simulacoes=simulacao, 
-            qtd_projecoes=self.qtd_projecoes, 
-            titulo='Simulação Depósitos Interbancários - DI',
-            n_simulacoes=self.n_simulacoes
-        )
+        di = np.round(di_ettj, 3)
+
+        ut.plotar_serie_historia(di_ettj, 'Depósitos Interbancários - DI ')
+
+        # ut.plotar_linhas(
+        #     simulacoes=di_ettj, 
+        #     qtd_projecoes=self.qtd_anos_projetados, 
+        #     titulo='Simulação Depósitos Interbancários - DI',
+        #     n_simulacoes=self.n_simulacoes
+        # )
         
-        return simulacao
+        return di_ettj
 
     def projetar_cds(self):
         """
@@ -200,7 +208,7 @@ class Valuation:
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
-            qtd_projecoes=self.qtd_projecoes, 
+            qtd_projecoes=self.qtd_anos_projetados, 
             titulo='Simulação Credit Default Swap - CDS',
             n_simulacoes=self.n_simulacoes
         )
@@ -221,7 +229,7 @@ class Valuation:
 
         ut.plotar_linhas(
             simulacoes=simulacao, 
-            qtd_projecoes=self.qtd_projecoes, 
+            qtd_projecoes=self.qtd_anos_projetados, 
             titulo='Simulação da Cobertura de Juros da Empresa',
             n_simulacoes=self.n_simulacoes
         )
@@ -242,9 +250,9 @@ class Valuation:
         media_desvio_growth = calculos.calculo_media_std_por_ano(growth)
 
         serie_historica = sh.pegar_serie_fcl()
-        simulacao = monte_carlo.projetar_fcl(serie_fcf=serie_historica, dados_growth=media_desvio_growth, n_simulacoes=self.n_simulacoes, qtd_projecoes=self.qtd_projecoes)
+        simulacao = monte_carlo.projetar_fcl(serie_fcf=serie_historica, dados_growth=media_desvio_growth, n_simulacoes=self.n_simulacoes, qtd_projecoes=self.qtd_anos_projetados)
 
-        ut.plotar_linhas(simulacoes=simulacao, qtd_projecoes=self.qtd_projecoes, titulo='Simulação do Fluxo de Caixa Livre - FCL', n_simulacoes=self.n_simulacoes)
+        ut.plotar_linhas(simulacoes=simulacao, qtd_projecoes=self.qtd_anos_projetados, titulo='Simulação do Fluxo de Caixa Livre - FCL', n_simulacoes=self.n_simulacoes)
 
         return simulacao
     
@@ -264,26 +272,24 @@ class Valuation:
 
         fcd = calculos.calculo_fcd(fcff_projetado=fcff, wacc_projetado=wacc)
 
-        ano = ut.get_ultimo_ano(self.qtd_projecoes)
-
-        ut.plotar_hist(fcd, f'Simulação do FCD - Ano de {ano} ')
+        ut.plotar_hist_valuation(fcd,self.qtd_papeis, f'Simulação do FCD')
 
         return fcd
 
-    def __init__(self, qtd_projecoes, n_simulacoes, ativo):
+    def __init__(self, anos_projetados, n_simulacoes, ativo):
         """
         Inicia a classe com as configurações principais
 
         Parameters
         ----------
-        qtd_projecoes: int 
+        anos_projetados: int 
             Quantidade de anos futuros 
         n_simulacoes: int 
             Quantidade de Simulações para cada ano projetado
         ativo:
             Nome do ativo da empresa para busca de alguns dados e cálculo do BETA
         """
-        self.qtd_projecoes = qtd_projecoes
+        self.qtd_anos_projetados = anos_projetados
         self.n_simulacoes = n_simulacoes
         self.ativo = ativo
         self.qtd_papeis, self.divida_bruta, self.valor_equity  = calculos.pegar_divida_equity()

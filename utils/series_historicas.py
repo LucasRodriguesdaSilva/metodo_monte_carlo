@@ -71,16 +71,16 @@ def pegar_serie_pib():
     return pib_var_trim
 
 
-def pegar_serie_di():
-    code = __get_code_di()
-    serie_di = ipeadatapy.timeseries(code)[f'VALUE ((% a.a.))']
+# def pegar_serie_di():
+#     code = __get_code_di()
+#     serie_di = ipeadatapy.timeseries(code)[f'VALUE ((% a.a.))']
 
-    ut.plotar_serie_historia(serie=serie_di,titulo='DI x pré-fixada')
+#     ut.plotar_serie_historia(serie=serie_di,titulo='DI x pré-fixada')
 
-    serie_di = serie_di.values
-    serie_di = serie_di / 100
+#     serie_di = serie_di.values
+#     serie_di = serie_di / 100
 
-    return serie_di
+#     return serie_di
 
 
 def pegar_serie_cds():

@@ -58,7 +58,7 @@ def plotar_serie_historia(serie, titulo):
     plt.close()
 
 
-def plotar_hist(simulacoes, titulo):
+def plotar_hist_valuation(simulacoes,qtd_papeis, titulo):
     """
     Gera, salva e exibe um histograma dos valores simulados.
 
@@ -70,16 +70,39 @@ def plotar_hist(simulacoes, titulo):
     :return: null
     """
 
-    plt.hist(simulacoes, edgecolor='black')
+    plt.hist(simulacoes, edgecolor='black', bins=40)
    
 
     # anos = __gerar_lista_anos(qtd_projecoes)
-    plt.xlabel('Valores Simulados (Em Milhões de Reais)')
+    plt.xlabel('Valuations')
     plt.ylabel('Frequência')
     plt.title(titulo)
 
     saida = __gerar_caminho_output(f'histograma_{titulo}')
     plt.savefig(saida)
-    plt.show()
+    # plt.show()
+
+    media_preco_atual = round(np.mean(simulacoes),2)
+
+    plt.axvline(media_preco_atual,color='r', linestyle='dashed',linewidth=2)
+
+    saida = __gerar_caminho_output(f'histograma_com_preco_atual')
+    plt.savefig(saida)
+    plt.close()
+
+    x_values = (simulacoes - media_preco_atual) / media_preco_atual
+
+    plt.hist(x_values, edgecolor='black', bins=40)
+   
+
+    # anos = __gerar_lista_anos(qtd_projecoes)
+    plt.xlabel('Valuations')
+    plt.ylabel('Frequência')
+    plt.title(titulo)
+    plt.axvline(0, color='r', linestyle='dashed', linewidth=2)
+
+    saida = __gerar_caminho_output(f'histograma_em_x')
+
+    plt.savefig(saida)
     plt.close()
 

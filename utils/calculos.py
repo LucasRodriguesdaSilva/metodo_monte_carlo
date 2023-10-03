@@ -1,5 +1,5 @@
+import datetime as dt
 from datetime import timedelta
-from datetime import datetime
 import yfinance as yf 
 import statsmodels.api as sm 
 import numpy as np 
@@ -7,6 +7,7 @@ import time
 import json
 import os 
 import pandas as pd
+import pyettj.ettj as ettj
 
 def __pegar_caminho_abs():
     return os.path.dirname(os.path.abspath(__file__))
@@ -34,7 +35,7 @@ def calculo_beta(ativo, bench="^BVSP",dias_passados = 3652.5):
         :return: int o Beta calculado
     """
 
-    data_agora = datetime.now()
+    data_agora = dt.datetime.now()
     x_anos_atras = data_agora - timedelta(days= dias_passados)
     dados_cotacoes = yf.download(tickers=[ativo, bench],start=x_anos_atras, end=data_agora)['Adj Close']
     retornos_diarios = dados_cotacoes.pct_change().dropna()
@@ -120,6 +121,33 @@ def calculo_media_std_por_ano(growth):
     resultado = resultado.T
     return resultado
 
+
+def calcular_di(qtd_anos_projetados):
+    if(qtd_anos_projetados > 36):
+        qtd_anos_projetados = 36
+    elif (qtd_anos_projetados < 4):
+        qtd_anos_projetados = 4
+
+
+    dias_projetados = int(qtd_anos_projetados * 365)
+    anos = [x for x in range(365,dias_projetados, 365)]
+
+    ano_atual_di = dt.date.today().year
+    dados_ettj = ettj.get_ettj(data=ano_atual_di, curva="PRE")
+    dias_corridos_di = dados_ettj['Dias Corridos'].unique()
+
+
+    dias_corridos_anuais_di = [] # lista vazia para guardar os dias corridos de ano em ano
+    for ano in anos: # para cada ano na lista
+        indice = np.where(np.abs(dias_corridos_di - ano) == np.min(np.abs(dias_corridos_di - ano))) # encontra o índice do valor mais próximo de ano no array
+        dias_corridos_anuais_di.append(dias_corridos_di[indice][0]) # adiciona o valor correspondente na lista
+    
+    coluna_ettj = "DI x pré 360(1)" # nome da coluna que você quer pegar
+    resultado_di = dados_ettj.loc[dados_ettj['Dias Corridos'].isin(dias_corridos_anuais_di), coluna_ettj] # filtrando o DataFrame pelos dias corridos e pela coluna
+    resultado_di /= 100
+
+    return resultado_di.values
+    
 
 
 def calculo_pl_lpa_json():
