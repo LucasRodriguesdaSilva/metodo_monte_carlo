@@ -8,6 +8,7 @@ import json
 import os 
 import pandas as pd
 import pyettj.ettj as ettj
+import matplotlib.pyplot as plt
 
 def __pegar_caminho_abs():
     return os.path.dirname(os.path.abspath(__file__))
@@ -129,13 +130,17 @@ def calcular_di(qtd_anos_projetados):
         qtd_anos_projetados = 4
 
 
-    dias_projetados = int(qtd_anos_projetados * 365)
+    dias_projetados = int(qtd_anos_projetados+1 * 365)
     anos = [x for x in range(365,dias_projetados, 365)]
 
     ano_atual_di = dt.date.today().year
     dados_ettj = ettj.get_ettj(data=ano_atual_di, curva="PRE")
     dias_corridos_di = dados_ettj['Dias Corridos'].unique()
 
+    fig = ettj.plot_ettj(dados_ettj, 'DI x pré 360(1)', ano_atual_di)
+
+    # Salvando o gráfico em um arquivo
+    plt.savefig('DI.png')
 
     dias_corridos_anuais_di = [] # lista vazia para guardar os dias corridos de ano em ano
     for ano in anos: # para cada ano na lista
