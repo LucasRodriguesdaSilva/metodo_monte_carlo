@@ -28,11 +28,11 @@ def __gerar_lista_anos(qtd_projecoes):
 
 
 def plotar_linhas(simulacoes,qtd_projecoes, titulo, n_simulacoes):
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(20, 8))
     for ano in range(n_simulacoes):
         plt.plot(simulacoes[ano])
 
-    plt.xlabel('Valores Simulados (%)')
+    plt.xlabel('Valores Simulados')
     plt.ylabel(titulo)
     plt.title(titulo)
     # plt.legend()
@@ -46,7 +46,7 @@ def plotar_linhas(simulacoes,qtd_projecoes, titulo, n_simulacoes):
 
 
 def plotar_serie_historia(serie, titulo):
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(20, 8))
     # Plota o gráfico de linha com os dados
     plt.plot(serie)
     plt.title(titulo)
@@ -69,8 +69,9 @@ def plotar_hist_valuation(simulacoes,qtd_papeis, titulo):
     :param salvar: boolean Salvar ou não a gráfico.
     :return: null
     """
+    plt.figure(figsize=(14, 8))
 
-    plt.hist(simulacoes, edgecolor='black', bins=40)
+    plt.hist(simulacoes, edgecolor='black', bins=20)
    
 
     # anos = __gerar_lista_anos(qtd_projecoes)
@@ -82,15 +83,19 @@ def plotar_hist_valuation(simulacoes,qtd_papeis, titulo):
     plt.savefig(saida)
     # plt.show()
 
-    media_preco_atual = round(np.mean(simulacoes),2)
+    preco_atual = round(np.mean(simulacoes),2)
+    # fcd_sum = np.sum(simulacoes)
+    # preco_atual = (fcd_sum * (10**6) # Em milhoes) / qtd_papeis
+    # print(preco_atual)
 
-    plt.axvline(media_preco_atual,color='r', linestyle='dashed',linewidth=2)
+    plt.axvline(preco_atual,color='r', linestyle='dashed',linewidth=2)
 
     saida = __gerar_caminho_output(f'histograma_com_preco_atual')
     plt.savefig(saida)
     plt.close()
 
-    x_values = (simulacoes - media_preco_atual) / media_preco_atual
+    plt.figure(figsize=(14, 8))
+    x_values = (simulacoes - preco_atual) / preco_atual
 
     plt.hist(x_values, edgecolor='black', bins=40)
    

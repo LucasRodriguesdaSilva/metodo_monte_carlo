@@ -1,29 +1,6 @@
 import numpy as np
 import random
 
-def pegar_ultimo_ano(simulacoes, qtd_projecoes):
-    """
-    Seleciona somente os valores simulados do ultimo ano projetado.
-
-    Parameters
-    ----------
-    simulacoes: array 
-        Array contendo todas as simulações utilizando o Monte Carlo.
-    qtd_projecoes: int 
-        Quantidade de anos projetados.
-    
-    Returns
-    -------
-    ultimo_ano: array
-        Array contendo o ultimo ano projetado.
-    """
-    ultimo_ano = []
-    for simulacao in simulacoes:
-        ultimo_ano.append(simulacao[qtd_projecoes - 1])
-
-    return ultimo_ano
-
-
 def projetar_dados(serie_historica, n_simulacoes, qtd_projecoes):
     """
     Projeta dados no futuro utilizando o Método de Monte Carlo.
@@ -57,13 +34,11 @@ def projetar_dados(serie_historica, n_simulacoes, qtd_projecoes):
     valor_anterior = serie_historica[-1][-1] if isinstance(serie_historica[-1], list) else serie_historica[-1]
 
     for _ in range(n_simulacoes):
-        valores_aleatorios = np.random.normal(1 + media, desvio_padrao, size=qtd_projecoes)
-        simulacao_atual = valor_anterior * np.cumprod(valores_aleatorios)
+        valores_aleatorios = np.random.normal(1+media, desvio_padrao, size=qtd_projecoes)
+        # Multiplica o valor anterior com o produto acumulados dos valores aleatorios
+        simulacao_atual = valor_anterior * np.cumprod(valores_aleatorios) 
+        # Deixa o Vetor em formato de Lista
         resultados_simulados = np.vstack([resultados_simulados, simulacao_atual]) if _ > 0 else simulacao_atual
-
-    
-
-    # ultimo_ano = pegar_ultimo_ano(simulacoes=resultados_simulados,qtd_projecoes=qtd_projecoes)
 
     return resultados_simulados
 
@@ -98,24 +73,18 @@ def projetar_fcl(serie_fcf, dados_growth, n_simulacoes, qtd_projecoes):
     """
 
     resultados_simulados = []
-    valor_anterior = serie_fcf[-1]
+    valor_anterior = serie_fcf[-1] # Pega o último valor da serie do fluxo de caixa 
 
     for _ in range(n_simulacoes):
         simulacao_atual = []
         for ano in range(qtd_projecoes):
             media, desvio_padrao = dados_growth[ano]
+            # Cria uma distribuição normal entre a media e o desvio padrão do growth
             taxa_crescimento_ano = np.random.normal(media, desvio_padrao)
             resultado  = valor_anterior * (1 + taxa_crescimento_ano)
             simulacao_atual.append(resultado)
 
         resultados_simulados.append(simulacao_atual) 
-
-
-
-        # taxa_crescimento = np.random.normal(1 + media, desvio_padrao, size=qtd_projecoes)
-        # simulacao_atual = valor_anterior * np.cumprod(taxa_crescimento)
-        # resultados_simulados = np.vstack([resultados_simulados, simulacao_atual]) if _ > 0 else simulacao_atual
-
     
 
     return np.array(resultados_simulados)

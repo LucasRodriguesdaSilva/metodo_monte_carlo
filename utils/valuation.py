@@ -74,10 +74,6 @@ class Valuation:
         self.cds_projetado = self.projetar_cds()
         self.di_projetado = self.projetar_di()
 
-        self.di_projetado = self.di_projetado.reshape(self.cds_projetado.shape)
-
-
-
         self.ke = calculos.calculo_ke(self.beta, self.premio_risco_projetado, self.di_projetado, self.cds_projetado)
         
         self.divida_bruta_projetado = np.tile(self.divida_bruta, (self.n_simulacoes, self.qtd_anos_projetados))
@@ -183,7 +179,7 @@ class Valuation:
 
         di = np.round(di_ettj, 3)
 
-        ut.plotar_serie_historia(di_ettj, 'Depósitos Interbancários - DI ')
+        # ut.plotar_serie_historia(di_ettj, 'Depósitos Interbancários - DI ')
 
         # ut.plotar_linhas(
         #     simulacoes=di_ettj, 
@@ -245,11 +241,13 @@ class Valuation:
         valores_projetados: np.array
             Valores no ultimo ano das projeções.
         """
-        growth = self.projetar_growth()
+        growth = self.projetar_growth() # Projeta o Growth no futuro
 
+        # Para cada simulação do GROWTH é pego o sua média e desvio padrão
         media_desvio_growth = calculos.calculo_media_std_por_ano(growth)
 
-        serie_historica = sh.pegar_serie_fcl()
+        serie_historica = sh.pegar_serie_fcl() # Serie Historia do Fluxo de Caixa Livre
+
         simulacao = monte_carlo.projetar_fcl(serie_fcf=serie_historica, dados_growth=media_desvio_growth, n_simulacoes=self.n_simulacoes, qtd_projecoes=self.qtd_anos_projetados)
 
         ut.plotar_linhas(simulacoes=simulacao, qtd_projecoes=self.qtd_anos_projetados, titulo='Simulação do Fluxo de Caixa Livre - FCL', n_simulacoes=self.n_simulacoes)
@@ -260,17 +258,18 @@ class Valuation:
     def projetar_fcd(self):
         """
         Projeta o Fluxo de Caixa Descontado no ultimo ano das projeções utilizando o cálculo:
-            FCD = Fluxo de Caixa / (1 + WACC)^qtd_projecoes
+            FCD = Fluxo de Caixa / (1 + WACC)^n
+            Onde n é o ano projetado, indo de 1 até self.qtd_anos_projetados 
 
         Returns
         -------
         FCD: np.array
             Valores no ultimo ano das projeções.
         """
-        fcff = self.projetar_fcff()
-        wacc = self.projetar_wacc()
+        fcff = self.projetar_fcff() # Projeta o Fluxo de caixa livre no futuro
+        wacc = self.projetar_wacc() # Projeta o WACC no futuro
 
-        fcd = calculos.calculo_fcd(fcff_projetado=fcff, wacc_projetado=wacc)
+        fcd = calculos.calculo_fcd(fcff_projetado=fcff, wacc_projetado=wacc) # Calcula o FCD
 
         ut.plotar_hist_valuation(fcd,self.qtd_papeis, f'Simulação do FCD')
 
