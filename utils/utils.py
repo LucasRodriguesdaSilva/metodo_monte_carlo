@@ -62,13 +62,16 @@ def plotar_hist_valuation(simulacoes,qtd_papeis, titulo):
     """
     Gera, salva e exibe um histograma dos valores simulados.
 
-    :param simulacoes: Array numpy com os valores simulados.
-    :param qtd_projecoes: Int correspondente a quantidade de anos projetados.
-    :param titulo: string referente ao titulo do cálculo.
-    :param bins: int Número de intervalos no histograma.
-    :param salvar: boolean Salvar ou não a gráfico.
-    :return: null
+    Parameters
+    ----------
+    simulacoes: np.array
+        Valores simulados para plotar 
+    qtd_papeis: int 
+        Quantidade ações da empresa em questão
+    titulo: string 
+        Referente ao titulo do cálculo.
     """
+
     plt.figure(figsize=(14, 8))
 
     plt.hist(simulacoes, edgecolor='black', bins=20)
@@ -100,7 +103,6 @@ def plotar_hist_valuation(simulacoes,qtd_papeis, titulo):
     plt.hist(x_values, edgecolor='black', bins=40)
    
 
-    # anos = __gerar_lista_anos(qtd_projecoes)
     plt.xlabel('Valuations')
     plt.ylabel('Frequência')
     plt.title(titulo)

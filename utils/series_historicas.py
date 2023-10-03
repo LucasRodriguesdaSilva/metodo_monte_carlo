@@ -71,18 +71,6 @@ def pegar_serie_pib():
     return pib_var_trim
 
 
-# def pegar_serie_di():
-#     code = __get_code_di()
-#     serie_di = ipeadatapy.timeseries(code)[f'VALUE ((% a.a.))']
-
-#     ut.plotar_serie_historia(serie=serie_di,titulo='DI x pré-fixada')
-
-#     serie_di = serie_di.values
-#     serie_di = serie_di / 100
-
-#     return serie_di
-
-
 def pegar_serie_cds():
     code = __Get_code_cds()
     serie_cds = ipeadatapy.timeseries(code)['VALUE (-)']
@@ -98,11 +86,12 @@ def pegar_serie_cds():
 
     return novo_array
 
-# Alterar depois 
-# Calculo do PL / LPA retirado do site da statuinvesti 
+# Calculo do PL / LPA, dados retirados do site da statuinvesti 
 def pegar_serie_cje():
     """
-        Calculo do PL / LPA 
+        Calculo do PL / LPA para a cobertura de juros da empresa
+
+        Pode ser alerado para utilizar outros dados para o CJE
     """
     cje = calculos.calculo_pl_lpa_json()
 
@@ -119,7 +108,9 @@ def pegar_serie_fcl():
         indices historicos retirados do site da 
         https://statusinvest.com.br/acoes/grnd3 para o ativo da Grendene.
 
-        Data da última atualização: 28/09/2023
+        Data da última atualização: 28/09/2023.
+
+        Valores em Milhoes de reais.
     """
     serie = [
         {
@@ -184,6 +175,8 @@ def pegar_serie_fcl():
         },
         
     ]
+
+    # Transforma em um dataframe e pega somente os valores
 
     df_pl = pd.DataFrame(serie)
     serie_fcl = df_pl.set_index('year')['value']

@@ -16,11 +16,8 @@ class Valuation:
 
         Returns
         -------
-        simulacao_ultimo_ano: np.array
-            n Simulações do ultimo ano projetado.
-        simulacao_completa: np.array | list
-            Simulação de todos os anos projetados.
-
+        simulacao_completa: np.array
+            Simulação de todos os anos projetados para n iterações.
 
         Examples
         --------
@@ -38,34 +35,36 @@ class Valuation:
 
     def projetar_growth(self):
         """
-        Projeta o Growth no futuro (ultimo ano das projeções), utilizando o IPCA e o PIB no futuro.
+        Projeta o Growth no futuro, utilizando o IPCA e o PIB no futuro.
 
         Returns
         -------
         self.growth: np.array
-            Array contendo o growth no ultimo ano das projeções.
-
+            Array contendo o growth projetado.
         """
 
         self.ipca_projetado = self.projetar_ipca()
         self.pib_projetado = self.projetar_pib()
 
         self.growth = calculos.calculo_growth(inflacao=self.ipca_projetado, pib=self.pib_projetado)
+
         ut.plotar_linhas(simulacoes=self.growth, qtd_projecoes=self.qtd_anos_projetados,titulo='Simulação do GROWTH', n_simulacoes=self.n_simulacoes)
 
         return self.growth   
 
     def projetar_wacc(self):
         """
-        Projeta o WACC no futuro (ultimo ano das projeções) utilizando algumas variaveis importantes
+        Projeta o WACC no futuro utilizando algumas variaveis importantes. Sendo elas
+        IPCA, BETA, PREMIO DE RISCO, CDS, DI, KE, DIVIDA BRUTA, VALOR DE MERCADO, CJE, KD
 
         Returns
         -------
         self.wacc: np.array 
-            Array contendo o WACC no ultimo ano das projeções.
+            Array contendo o WACC projetado.
 
         """
-        self.ipca_projetado = self.projetar_ipca()
+        # O IPCA já foi calculado anteriormente pelo growth.
+        # self.ipca_projetado = self.projetar_ipca()
 
         self.beta = calculos.calculo_beta(self.ativo)
         beta_projetado = np.tile(self.beta, (self.n_simulacoes, self.qtd_anos_projetados)) 
@@ -74,12 +73,19 @@ class Valuation:
         self.cds_projetado = self.projetar_cds()
         self.di_projetado = self.projetar_di()
 
+        #Custo de Capital Próprio - KE
         self.ke = calculos.calculo_ke(self.beta, self.premio_risco_projetado, self.di_projetado, self.cds_projetado)
+
+        # Usando o np.tile para deixa uma constante no mesmo tamanho 
+        # das simulações feitas para as outras variáveis.
         
         self.divida_bruta_projetado = np.tile(self.divida_bruta, (self.n_simulacoes, self.qtd_anos_projetados))
         self.valor_equity_projetado = np.tile(self.valor_equity, (self.n_simulacoes, self.qtd_anos_projetados))
         
+        # Cobertura de Juros da Empresa - CJE
         self.cje_projetado = self.projetar_cje()
+
+        # Custo de Capital de Terceiros  - KD
         self.kd_projetado = calculos.calcular_kd(self.ipca_projetado, self.cje_projetado, self.n_simulacoes)
 
         self.wacc = calculos.calculo_wacc(
@@ -104,7 +110,7 @@ class Valuation:
         Returns
         -------
         valores_projetados: np.array
-            Valores no ultimo ano das projeções.
+            Valores das projeções.
         """
 
         serie_historica = sh.pegar_serie_ipca()
@@ -127,7 +133,7 @@ class Valuation:
         Returns
         -------
         valores_projetados: np.array
-            Valores no ultimo ano das projeções.
+            Valores das projeções.
         """
 
         serie_historica = sh.pegar_serie_pib()
@@ -150,7 +156,7 @@ class Valuation:
         Returns
         -------
         valores_projetados: np.array
-            Valores no ultimo ano das projeções.
+            Valores das projeções.
         """
         serie_historica = sh.pegar_serie_selic()
         simulacao = self.projetar(serie_historica=serie_historica)
@@ -166,27 +172,14 @@ class Valuation:
 
     def projetar_di(self):
         """
-        Projeta o DI utilizando a sua serie historica.
+        Projeta o DI utilizando a biblioteca ETTJ.
 
         Returns
         -------
         valores_projetados: np.array
-            Valores no ultimo ano das projeções.
+            Valores das projeções.
         """
-        # serie_historica = sh.pegar_serie_di()
-        # di_ettj = self.projetar(serie_historica=serie_historica)
         di_ettj = calculos.calcular_di(self.qtd_anos_projetados)
-
-        di = np.round(di_ettj, 3)
-
-        # ut.plotar_serie_historia(di_ettj, 'Depósitos Interbancários - DI ')
-
-        # ut.plotar_linhas(
-        #     simulacoes=di_ettj, 
-        #     qtd_projecoes=self.qtd_anos_projetados, 
-        #     titulo='Simulação Depósitos Interbancários - DI',
-        #     n_simulacoes=self.n_simulacoes
-        # )
         
         return di_ettj
 
@@ -197,7 +190,7 @@ class Valuation:
         Returns
         -------
         valores_projetados: np.array
-            Valores no ultimo ano das projeções.
+            Valores das projeções..
         """
         serie_historica = sh.pegar_serie_cds()
         simulacao = self.projetar(serie_historica=serie_historica)
@@ -218,7 +211,7 @@ class Valuation:
         Returns
         -------
         valores_projetados: np.array
-            Valores no ultimo ano das projeções.
+            Valores das projeções..
         """
         serie_historica = sh.pegar_serie_cje()
         simulacao = self.projetar(serie_historica=serie_historica)
@@ -239,11 +232,12 @@ class Valuation:
         Returns
         -------
         valores_projetados: np.array
-            Valores no ultimo ano das projeções.
+            Valores das projeções..
         """
+
         growth = self.projetar_growth() # Projeta o Growth no futuro
 
-        # Para cada simulação do GROWTH é pego o sua média e desvio padrão
+        # Para cada simulação do GROWTH é pego a sua média e desvio padrão
         media_desvio_growth = calculos.calculo_media_std_por_ano(growth)
 
         serie_historica = sh.pegar_serie_fcl() # Serie Historia do Fluxo de Caixa Livre
@@ -257,14 +251,14 @@ class Valuation:
 
     def projetar_fcd(self):
         """
-        Projeta o Fluxo de Caixa Descontado no ultimo ano das projeções utilizando o cálculo:
+        Projeta o Fluxo de Caixa Descontado das projeções utilizando o cálculo:
             FCD = Fluxo de Caixa / (1 + WACC)^n
             Onde n é o ano projetado, indo de 1 até self.qtd_anos_projetados 
 
         Returns
         -------
         FCD: np.array
-            Valores no ultimo ano das projeções.
+            Valores das projeções..
         """
         fcff = self.projetar_fcff() # Projeta o Fluxo de caixa livre no futuro
         wacc = self.projetar_wacc() # Projeta o WACC no futuro
@@ -288,7 +282,9 @@ class Valuation:
         ativo:
             Nome do ativo da empresa para busca de alguns dados e cálculo do BETA
         """
+
         self.qtd_anos_projetados = anos_projetados
         self.n_simulacoes = n_simulacoes
         self.ativo = ativo
-        self.qtd_papeis, self.divida_bruta, self.valor_equity  = calculos.pegar_divida_equity()
+        # Constantes buscadas no site da status invest
+        self.qtd_papeis, self.divida_bruta, self.valor_equity  = calculos.pegar_divida_equity() 

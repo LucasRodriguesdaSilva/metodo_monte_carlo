@@ -16,9 +16,7 @@ def projetar_dados(serie_historica, n_simulacoes, qtd_projecoes):
 
     Returns
     -------
-    ultimo_ano: array
-        n Simulações do ultimo ano projetado.
-    resultados_simulados: array
+    resultados_simulados: np.array
         Simulação de todos os anos projetados.
 
     Examples
@@ -31,6 +29,7 @@ def projetar_dados(serie_historica, n_simulacoes, qtd_projecoes):
     desvio_padrao = np.std(serie_historica)
 
     resultados_simulados = []
+    # Pega o último valor da serie para referencia.
     valor_anterior = serie_historica[-1][-1] if isinstance(serie_historica[-1], list) else serie_historica[-1]
 
     for _ in range(n_simulacoes):
@@ -61,8 +60,6 @@ def projetar_fcl(serie_fcf, dados_growth, n_simulacoes, qtd_projecoes):
 
     Returns
     -------
-    ultimo_ano: array
-        n Simulações do ultimo ano projetado.
     resultados_simulados: array
         Simulação de todos os anos projetados.
 
@@ -73,7 +70,7 @@ def projetar_fcl(serie_fcf, dados_growth, n_simulacoes, qtd_projecoes):
     """
 
     resultados_simulados = []
-    valor_anterior = serie_fcf[-1] # Pega o último valor da serie do fluxo de caixa 
+    valor_anterior = serie_fcf[-1] # Pega o último valor da serie do fluxo de caixa para referencia
 
     for _ in range(n_simulacoes):
         simulacao_atual = []

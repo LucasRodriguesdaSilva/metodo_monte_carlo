@@ -15,6 +15,23 @@ def __pegar_caminho_abs():
 
 
 def calculo_fcd(fcff_projetado, wacc_projetado):
+    """
+    Projeta o Fluxo de Caixa Descontado das projeções utilizando o cálculo:
+        FCD = Fluxo de Caixa / (1 + WACC)^n
+        Onde n é o ano projetado, indo de 1 até self.qtd_anos_projetados 
+
+    Parameters
+    ----------
+    fcff_projetado: np.array
+        Fluxo de Caixa livre projetado com Monte Carlo.
+    wacc_projetado: np.array
+        WACC projetado com Monte Carlo.
+
+    Returns
+    -------
+    FCD: np.array
+        Valores dos valuations por simulação, V1 ... V_n_simulacoes.
+    """
     resultado = np.zeros_like(fcff_projetado)
     for ano in range(fcff_projetado.shape[1]):
         n = ano + 1
@@ -28,12 +45,20 @@ def calculo_fcd(fcff_projetado, wacc_projetado):
 
 def calculo_beta(ativo, bench="^BVSP",dias_passados = 3652.5):
     """
-        Calcula o Beta de um ativo apartir de x anos passados
+    Calcula o Beta de um ativo apartir de x anos passados
 
-        :param ativo: string nome do Ativo
-        :param bench: string
-        :param dias_passados: int quantidade de dias que já passaram padrão 10 anos
-        :return: int o Beta calculado
+    Parameters
+    ----------
+    ativo: string
+        Nome do Ativo
+    bench: string
+    dias_passados: int
+        valor padrão 10 anos em dias.
+
+    Returns
+    -------
+    beta: int
+        Beta calculado.
     """
 
     data_agora = dt.datetime.now()
@@ -50,12 +75,21 @@ def calculo_beta(ativo, bench="^BVSP",dias_passados = 3652.5):
 
 def calculo_growth(inflacao, pib):
     """
-        Calcular o Growth utilizando a inflação e o pib
-        
-        :param inflacao: int
-        :param pib: int
-        :return: int
+    Calcula o Growth utilizando a inflação e o pib projetados
+
+    Parameters
+    ----------
+    infalacao: np.array
+        Inflação projetada pelo Monte Carlo.
+    pib: np.array
+        Pib projetado pelo Monte Carlo.
+
+    Returns
+    -------
+    growth: np.array
+        Array contendo o growth calculado.
     """
+
     return ((1 + inflacao) * (1 + pib)) - 1
 
 
@@ -65,6 +99,28 @@ def calculo_wacc(ke, valor_equity, kd, divida_bruta):
 
 
 def calculo_ke(beta, premio_risco, di, cds):
+    """
+    Custo de capital próprio, utilizando o calculo:
+        taxa_livre_risco + (beta * premio_risco) 
+        Calculo retirado da VAROS.
+        
+    Parameters
+    ----------
+    beta: np.array
+        Beta Calculado, e com o tamanho do array corrigido.
+    premio_risco: np.array
+        Premio de risco projetado.
+    di: np.array
+        Projetado pelo ETTJ.
+    cds: np.array
+        projetado com Monte Carlo.
+
+    Returns
+    -------
+    ke: np.array
+        Custo de capital proprio calculado.
+    
+    """
 
     taxa_livre_risco = di - cds
     ke = taxa_livre_risco + (beta * premio_risco)
@@ -94,6 +150,18 @@ def pegar_divida_equity():
 
 
 def calcular_kd(inflacao, cje_projetado, n_simulacoes):
+    """
+    Custo de Capital de Terceiros (Kd)
+        inflação + cobertura de juros da empresa.
+    
+    Parameters
+    ----------
+    inflacao: np.array 
+        Inflação projetada.
+    cje_projetado: np.array
+    n_simulacoes: int 
+        Quantidade de simulações feitas.
+    """
     kd = []
     for simulacao in range(n_simulacoes):
         r = inflacao[simulacao] + cje_projetado[simulacao]
@@ -124,6 +192,9 @@ def calculo_media_std_por_ano(growth):
 
 
 def calcular_di(qtd_anos_projetados):
+    """
+    DI feito apartir do ETTJ.
+    """
     if(qtd_anos_projetados > 36):
         qtd_anos_projetados = 36
     elif (qtd_anos_projetados < 4):
