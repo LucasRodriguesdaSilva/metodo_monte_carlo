@@ -17,7 +17,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-### Para alterar os parâmetros modiique o arquivo main.py
+### Para alterar os parâmetros modifique o arquivo main.py
 
 ```
 # Quantidade de anos projetados no futuro
